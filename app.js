@@ -6,6 +6,12 @@
 "use strict";
 
 // ──────────────────────────────────────────────────────────────────────
+// 0. SECURITY PASSKEY CONFIGURATION (BIG TEAM 01 ACCESS)
+// ──────────────────────────────────────────────────────────────────────
+const AUTH_PASSKEY = 'Big01';
+const AUTH_STORAGE_KEY = '51talk_studio_auth_token';
+
+// ──────────────────────────────────────────────────────────────────────
 // 1. DATA TAXONOMY & DEFINITIONS
 // ──────────────────────────────────────────────────────────────────────
 
@@ -788,6 +794,103 @@ function closeEcosystemModal() {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// SECURITY PASSKEY AUTHENTICATION (BIG TEAM 01 GATE)
+// ──────────────────────────────────────────────────────────────────────
+
+function checkAuthenticationState() {
+  const isAuthSession = sessionStorage.getItem(AUTH_STORAGE_KEY);
+  const isAuthLocal = localStorage.getItem(AUTH_STORAGE_KEY);
+  const gate = $('auth-gate-overlay');
+  
+  if (isAuthSession === 'authenticated_big01' || isAuthLocal === 'authenticated_big01') {
+    if (gate) {
+      gate.classList.add('auth-unlocked');
+      setTimeout(() => {
+        gate.style.display = 'none';
+      }, 350);
+    }
+  } else {
+    if (gate) {
+      gate.style.display = 'flex';
+      gate.classList.remove('auth-unlocked');
+      const input = $('auth-password-input');
+      if (input) setTimeout(() => input.focus(), 200);
+    }
+  }
+}
+
+function handleAuthSubmit(e) {
+  if (e) e.preventDefault();
+  const input = $('auth-password-input');
+  const errorBox = $('auth-error-msg');
+  const errorText = $('auth-error-text');
+  const remember = $('auth-remember-device');
+  const gate = $('auth-gate-overlay');
+
+  if (!input) return;
+  const enteredPass = input.value.trim();
+
+  if (enteredPass === AUTH_PASSKEY) {
+    if (errorBox) errorBox.style.display = 'none';
+    
+    // Store authenticated status
+    sessionStorage.setItem(AUTH_STORAGE_KEY, 'authenticated_big01');
+    if (remember && remember.checked) {
+      localStorage.setItem(AUTH_STORAGE_KEY, 'authenticated_big01');
+    }
+
+    // Success animation & unlock
+    if (gate) {
+      gate.classList.add('auth-success-pulse');
+      setTimeout(() => {
+        gate.classList.add('auth-unlocked');
+        setTimeout(() => {
+          gate.style.display = 'none';
+        }, 350);
+      }, 250);
+    }
+  } else {
+    // Failure feedback
+    if (errorBox) {
+      errorBox.style.display = 'flex';
+      if (errorText) {
+        errorText.textContent = state.lang === 'en'
+          ? 'Invalid password! Access code is required.'
+          : 'رمز المرور غير صحيح! يرجى التأكد والمحاولة مجدداً.';
+      }
+    }
+    input.classList.add('shake-error');
+    setTimeout(() => input.classList.remove('shake-error'), 600);
+    input.focus();
+    input.select();
+  }
+}
+
+function togglePasswordVisibility() {
+  const input = $('auth-password-input');
+  if (!input) return;
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+
+function lockStudioPlatform() {
+  sessionStorage.removeItem(AUTH_STORAGE_KEY);
+  localStorage.removeItem(AUTH_STORAGE_KEY);
+  const gate = $('auth-gate-overlay');
+  const input = $('auth-password-input');
+  const errorBox = $('auth-error-msg');
+  if (errorBox) errorBox.style.display = 'none';
+  if (input) {
+    input.value = '';
+    input.type = 'password';
+  }
+  if (gate) {
+    gate.style.display = 'flex';
+    gate.classList.remove('auth-unlocked', 'auth-success-pulse');
+    if (input) setTimeout(() => input.focus(), 150);
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // 5. BILINGUAL LANGUAGE ENGINE (ARABIC / ENGLISH - USER REQUIREMENT 2)
 // ──────────────────────────────────────────────────────────────────────
 
@@ -929,6 +1032,20 @@ function updateDocumentLanguageContent(isEn) {
   if ($('sec-title-advisor')) $('sec-title-advisor').textContent = isEn ? 'Official Academic Directives & Advisor Endorsement' : 'توجيهات واعتماد المستشار التعليمي المشرف';
   if ($('sec-sub-advisor')) $('sec-sub-advisor').textContent = isEn ? 'Certified strategic guidance tailored for parents to maximize learning outcomes' : 'خطة إستراتيجية معتمدة وموجهة لولي الأمر لضمان تحقيق أعلى عائد تعليمي';
   if ($('sec-tag-advisor')) $('sec-tag-advisor').textContent = isEn ? 'Official Certification' : 'اعتماد أكاديمي رسمي';
+
+  // Security Gate & Lock Button
+  if ($('lbl-lock-btn')) $('lbl-lock-btn').textContent = isEn ? 'Lock Studio' : 'قفل المنصة';
+  const authTitle = document.querySelector('.auth-title');
+  if (authTitle) authTitle.textContent = isEn ? 'Smart Study Plan Studio' : 'استوديو الخطط الدراسية الذكية';
+  const authDesc = document.querySelector('.auth-desc');
+  if (authDesc) authDesc.textContent = isEn ? 'Please enter authorized passkey to access platform' : 'يرجى إدخال كلمة المرور المصرح بها للدخول إلى المنصة';
+  const authPassInput = $('auth-password-input');
+  if (authPassInput) authPassInput.placeholder = isEn ? 'Enter passkey...' : 'أدخل رمز المرور...';
+  const btnAuthSub = $('btn-auth-submit');
+  if (btnAuthSub) {
+    const textSpan = btnAuthSub.querySelector('span:first-child');
+    if (textSpan) textSpan.textContent = isEn ? 'Secure Login' : 'تسجيل الدخول الآمن';
+  }
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -1333,4 +1450,7 @@ document.addEventListener('DOMContentLoaded', () => {
   state.notes          = $('f-notes').value;
 
   renderStudio();
+
+  // Enforce security passkey gate check on page load
+  checkAuthenticationState();
 });

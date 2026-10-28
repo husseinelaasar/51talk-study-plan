@@ -14,6 +14,63 @@
 </head>
 <body class="studio-body">
 
+<!-- ═══════════════════════════════════════════════
+     SECURITY PASSKEY GATE (BIG TEAM 01 ACCESS)
+═══════════════════════════════════════════════ -->
+<div id="auth-gate-overlay" class="auth-gate-overlay">
+  <div class="auth-card-3d">
+    <div class="auth-brand-emblem">
+      <div class="auth-emblem-disc">
+        <span class="auth-logo-text">51<span>Talk</span></span>
+        <span class="auth-shield-icon">🛡️</span>
+      </div>
+    </div>
+    
+    <div class="auth-header">
+      <span class="auth-badge-team">VIP Security Gate • Big Team 01</span>
+      <h2 class="auth-title">استوديو الخطط الدراسية الذكية</h2>
+      <p class="auth-desc">يرجى إدخال كلمة المرور المصرح بها للدخول إلى المنصة</p>
+    </div>
+
+    <form class="auth-form" id="auth-form" onsubmit="handleAuthSubmit(event)">
+      <div class="auth-input-group">
+        <span class="auth-input-icon">🔑</span>
+        <input 
+          type="password" 
+          id="auth-password-input" 
+          class="auth-input-field" 
+          placeholder="أدخل رمز المرور..." 
+          autocomplete="current-password"
+          required 
+          autofocus
+        >
+        <button type="button" class="btn-toggle-eye" onclick="togglePasswordVisibility()" title="إظهار / إخفاء">👁️</button>
+      </div>
+
+      <div class="auth-remember-row">
+        <label class="auth-remember-label">
+          <input type="checkbox" id="auth-remember-device" checked>
+          <span>تذكر هذا الجهاز (البقاء مسجلاً)</span>
+        </label>
+      </div>
+
+      <div id="auth-error-msg" class="auth-error-msg" style="display:none;">
+        <span class="error-icon">⚠️</span>
+        <span id="auth-error-text">رمز المرور غير صحيح! يرجى التأكد والمحاولة مجدداً.</span>
+      </div>
+
+      <button type="submit" class="auth-submit-btn" id="btn-auth-submit">
+        <span>تسجيل الدخول الآمن</span>
+        <span class="auth-btn-arrow">➔</span>
+      </button>
+    </form>
+
+    <div class="auth-footer-notes">
+      <span>🔒 منصة داخلية مخصصة ومحمية لمستشاري 51Talk التعليميين</span>
+    </div>
+  </div>
+</div>
+
 <!-- Ambient Background Glows & Floating Celebration Sparkles -->
 <div class="glow-orb orb-1"></div>
 <div class="glow-orb orb-2"></div>
@@ -54,6 +111,12 @@
           <span>🌐 English</span>
         </button>
       </div>
+
+      <!-- Lock Platform Button -->
+      <button type="button" class="action-btn btn-glass btn-lock-screen" id="btn-lock-screen" onclick="lockStudioPlatform()" title="قفل المنصة">
+        <span class="btn-icon">🔒</span>
+        <span id="lbl-lock-btn">قفل المنصة</span>
+      </button>
 
       <!-- Public / Colleague Sharing Button -->
       <button class="action-btn btn-share-cloud" id="btn-share-modal" onclick="openShareModal()">

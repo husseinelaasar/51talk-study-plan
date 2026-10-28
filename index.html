@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51Talk Studio | استوديو الخطط الدراسية الأكاديمية الذكية — المملكة العربية السعودية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- High-Performance PDF Engine (Local with CDN Fallback) -->
+<script src="html2canvas.min.js"></script>
+<script src="jspdf.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="studio-body">
+
+<!-- Ambient Background Glows & Floating Celebration Sparkles -->
+<div class="glow-orb orb-1"></div>
+<div class="glow-orb orb-2"></div>
+<div class="glow-orb orb-3"></div>
+<div class="sparkle-particle sp-1">✦</div>
+<div class="sparkle-particle sp-2">★</div>
+<div class="sparkle-particle sp-3">✨</div>
+<div class="sparkle-particle sp-4">✦</div>
+<div class="sparkle-particle sp-5">★</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER / TOP NAVIGATION BAR
+═══════════════════════════════════════════════ -->
+<header class="app-header no-print">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="brand-badge-glow">
+        <span class="brand-logo-text">51<span>Talk</span></span>
+        <span class="studio-pill">STUDIO</span>
+      </div>
+      <div class="brand-divider"></div>
+      <div class="brand-info">
+        <div class="brand-title-row">
+          <h1 class="brand-title">استوديو الخطط الدراسية المخصصة</h1>
+          <span class="saudi-flag-badge">🇸🇦 المملكة العربية السعودية</span>
+        </div>
+        <p class="brand-subtitle">نظام التخطيط الأكاديمي الذكي المعتمد لمعايير CEFR الدولية</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Bilingual Language Selector (AR / EN) -->
+      <div class="lang-switcher-pill" id="lang-switcher-wrap">
+        <button type="button" class="lang-toggle-btn active" id="btn-lang-ar" onclick="setLanguage('ar')">
+          <span>🇸🇦 العربية</span>
+        </button>
+        <button type="button" class="lang-toggle-btn" id="btn-lang-en" onclick="setLanguage('en')">
+          <span>🌐 English</span>
+        </button>
+      </div>
+
+      <!-- Public / Colleague Sharing Button -->
+      <button class="action-btn btn-share-cloud" id="btn-share-modal" onclick="openShareModal()">
+        <span class="btn-icon">🌐</span>
+        <span id="lbl-share-btn">مشاركة الرابط للزملاء</span>
+        <span class="live-dot-green"></span>
+      </button>
+
+      <button class="action-btn btn-glass" id="btn-open-presets">
+        <span class="btn-icon">⚡</span>
+        <span>نماذج استشارية جاهزة</span>
+      </button>
+
+      <button class="action-btn btn-whatsapp" id="btn-whatsapp">
+        <span class="btn-icon">💬</span>
+        <span>نسخ ملخص الواتساب</span>
+      </button>
+
+      <button class="action-btn btn-primary-gradient" id="btn-pdf">
+        <span class="btn-icon">📥</span>
+        <span>تحميل وثيقة PDF (متطابقة تماماً)</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     LIVE METRICS STRIP (Studio Live Analytics)
+═══════════════════════════════════════════════ -->
+<section class="metrics-ribbon no-print">
+  <div class="ribbon-inner">
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(255,87,34,0.15); color: #ff5722;">🎯</div>
+      <div class="metric-details">
+        <span class="metric-label">المسار الأكاديمي المختار</span>
+        <strong class="metric-val" id="metric-path">Level S ➔ Level 3 (A2.1)</strong>
+      </div>
+    </div>
+    <div class="metric-divider"></div>
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(16,185,129,0.15); color: #10b981;">⏱️</div>
+      <div class="metric-details">
+        <span class="metric-label">المدة الزمنية المتوقعة</span>
+        <strong class="metric-val" id="metric-duration">8.0 – 10.0 أشهر</strong>
+      </div>
+    </div>
+    <div class="metric-divider"></div>
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(2,136,209,0.15); color: #0288d1;">📚</div>
+      <div class="metric-details">
+        <span class="metric-label">إجمالي الحصص التعليمية</span>
+        <strong class="metric-val" id="metric-lessons">112 حصة (14 وحدة)</strong>
+      </div>
+    </div>
+    <div class="metric-divider"></div>
+    <div class="metric-card">
+      <div class="metric-icon" style="background: rgba(124,58,237,0.15); color: #a855f7;">👨‍💼</div>
+      <div class="metric-details">
+        <span class="metric-label">المستشار الأكاديمي المعتمد</span>
+        <strong class="metric-val" id="metric-advisor">أ. صابر حسين (خبير التعليم)</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MAIN STUDIO WORKSPACE
+═══════════════════════════════════════════════ -->
+<main class="studio-workspace no-print">
+
+  <!-- ─────────────────────────────────────────────
+       LEFT PANE: STUDIO CONTROLS (TABS & CONFIG)
+  ───────────────────────────────────────────── -->
+  <aside class="controls-pane">
+
+    <!-- NAVIGATION TABS -->
+    <div class="controls-nav-tabs">
+      <button class="ctrl-tab active" data-tab="tab-student" onclick="switchTab(this, 'tab-student')">
+        <span class="tab-badge">1</span>
+        <span>بيانات الطالب والهدف</span>
+      </button>
+      <button class="ctrl-tab" data-tab="tab-curricula" onclick="switchTab(this, 'tab-curricula')">
+        <span class="tab-badge">2</span>
+        <span>المناهج والمسار</span>
+      </button>
+      <button class="ctrl-tab" data-tab="tab-ecosystem" onclick="switchTab(this, 'tab-ecosystem')">
+        <span class="tab-badge">3</span>
+        <span id="tab-nav-eco">منظومة التعلم 360°</span>
+      </button>
+      <button class="ctrl-tab" data-tab="tab-addons" onclick="switchTab(this, 'tab-addons')">
+        <span class="tab-badge">4</span>
+        <span>المميزات الإضافية</span>
+      </button>
+      <button class="ctrl-tab" data-tab="tab-advisor" onclick="switchTab(this, 'tab-advisor')">
+        <span class="tab-badge">5</span>
+        <span>اعتماد المستشار التعليمي</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: STUDENT & GOAL -->
+    <div class="tab-content active" id="tab-student">
+      <div class="glass-section">
+        <div class="section-badge-header">
+          <div class="sec-icon-circle" style="background: linear-gradient(135deg, #ff5722, #f97316);">👤</div>
+          <div>
+            <h3 class="sec-title">بيانات الطالب والمعلومات الأكاديمية</h3>
+            <p class="sec-subtitle">المعلومات الشخصية التي ستظهر على التقرير الرسمي</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group span-2">
+            <label class="form-label" for="f-name">اسم الطالب / الطالبة <span class="required-star">*</span></label>
+            <div class="input-with-icon">
+              <span class="input-icon">🎓</span>
+              <input type="text" id="f-name" class="modern-input" value="ريان فهد القحطاني" placeholder="اكتب اسم الطالب كاملاً">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-age">العمر الحالي</label>
+            <div class="input-with-icon">
+              <span class="input-icon">🎂</span>
+              <input type="number" id="f-age" class="modern-input" value="9" min="4" max="25">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">نوع المدرسة بالمملكة</label>
+            <div class="segmented-picker" id="school-group">
+              <button type="button" class="seg-btn active" data-val="حكومية (Saudi Public)" onclick="selectSegment(this,'school-group','f-school')">حكومية</button>
+              <button type="button" class="seg-btn" data-val="أهلية (Private)" onclick="selectSegment(this,'school-group','f-school')">أهلية</button>
+              <button type="button" class="seg-btn" data-val="عالمية (International)" onclick="selectSegment(this,'school-group','f-school')">عالمية</button>
+            </div>
+            <input type="hidden" id="f-school" value="حكومية (Saudi Public)">
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL SELECTOR MATRIX -->
+      <div class="glass-section mt-16">
+        <div class="section-badge-header">
+          <div class="sec-icon-circle" style="background: linear-gradient(135deg, #0288d1, #00acc1);">🎯</div>
+          <div>
+            <h3 class="sec-title">مصفوفة المستويات الأكاديمية (CEFR Framework)</h3>
+            <p class="sec-subtitle">اختر المستوى الحالي بدقة والمستوى المستهدف الذي يسعى إليه الطالب</p>
+          </div>
+        </div>
+
+        <div class="level-selection-wrapper">
+          <div class="level-column">
+            <div class="level-col-header">
+              <span class="pin-indicator current-pin">📍</span>
+              <h4>المستوى الحالي للطالب</h4>
+              <span class="current-selected-tag" id="curr-tag-display">Level S (Starter)</span>
+            </div>
+            <div class="levels-flex-grid" id="curr-lvl-grid">
+              <div class="lvl-card active" data-num="-1" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level S</div>
+                <div class="lvl-card-cefr">Pre-A1</div>
+                <div class="lvl-card-desc">Starter</div>
+              </div>
+              <div class="lvl-card" data-num="0" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 0</div>
+                <div class="lvl-card-cefr">Pre-A1</div>
+                <div class="lvl-card-desc">Pre-Found.</div>
+              </div>
+              <div class="lvl-card" data-num="1" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 1</div>
+                <div class="lvl-card-cefr">A1.1</div>
+                <div class="lvl-card-desc">Beginner</div>
+              </div>
+              <div class="lvl-card" data-num="2" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 2</div>
+                <div class="lvl-card-cefr">A1.2</div>
+                <div class="lvl-card-desc">Elementary</div>
+              </div>
+              <div class="lvl-card" data-num="3" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 3</div>
+                <div class="lvl-card-cefr">A2.1</div>
+                <div class="lvl-card-desc">Pre-Inter.</div>
+              </div>
+              <div class="lvl-card" data-num="4" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 4</div>
+                <div class="lvl-card-cefr">A2.2</div>
+                <div class="lvl-card-desc">Intermediate</div>
+              </div>
+              <div class="lvl-card" data-num="5" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 5</div>
+                <div class="lvl-card-cefr">B1.1</div>
+                <div class="lvl-card-desc">Upper-Int.</div>
+              </div>
+              <div class="lvl-card" data-num="6" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 6</div>
+                <div class="lvl-card-cefr">B1.2</div>
+                <div class="lvl-card-desc">B1 Plus</div>
+              </div>
+              <div class="lvl-card" data-num="7" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 7</div>
+                <div class="lvl-card-cefr">B2.1</div>
+                <div class="lvl-card-desc">Advanced</div>
+              </div>
+              <div class="lvl-card" data-num="8" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 8</div>
+                <div class="lvl-card-cefr">B2.2</div>
+                <div class="lvl-card-desc">Upper-Adv.</div>
+              </div>
+              <div class="lvl-card" data-num="9" onclick="selectLevelNode('curr',this)">
+                <div class="lvl-card-top">Level 9</div>
+                <div class="lvl-card-cefr">C1</div>
+                <div class="lvl-card-desc">Proficiency</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="level-column mt-16">
+            <div class="level-col-header">
+              <span class="pin-indicator target-pin">🎯</span>
+              <h4>المستوى المستهدف تحقيقه</h4>
+              <span class="target-selected-tag" id="target-tag-display">Level 3 (Pre-Inter.)</span>
+            </div>
+            <div class="levels-flex-grid" id="target-lvl-grid">
+              <div class="lvl-card target-variant" data-num="-1" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level S</div>
+                <div class="lvl-card-cefr">Pre-A1</div>
+                <div class="lvl-card-desc">Starter</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="0" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 0</div>
+                <div class="lvl-card-cefr">Pre-A1</div>
+                <div class="lvl-card-desc">Pre-Found.</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="1" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 1</div>
+                <div class="lvl-card-cefr">A1.1</div>
+                <div class="lvl-card-desc">Beginner</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="2" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 2</div>
+                <div class="lvl-card-cefr">A1.2</div>
+                <div class="lvl-card-desc">Elementary</div>
+              </div>
+              <div class="lvl-card target-variant active" data-num="3" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 3</div>
+                <div class="lvl-card-cefr">A2.1</div>
+                <div class="lvl-card-desc">Pre-Inter.</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="4" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 4</div>
+                <div class="lvl-card-cefr">A2.2</div>
+                <div class="lvl-card-desc">Intermediate</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="5" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 5</div>
+                <div class="lvl-card-cefr">B1.1</div>
+                <div class="lvl-card-desc">Upper-Int.</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="6" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 6</div>
+                <div class="lvl-card-cefr">B1.2</div>
+                <div class="lvl-card-desc">B1 Plus</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="7" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 7</div>
+                <div class="lvl-card-cefr">B2.1</div>
+                <div class="lvl-card-desc">Advanced</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="8" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 8</div>
+                <div class="lvl-card-cefr">B2.2</div>
+                <div class="lvl-card-desc">Upper-Adv.</div>
+              </div>
+              <div class="lvl-card target-variant" data-num="9" onclick="selectLevelNode('target',this)">
+                <div class="lvl-card-top">Level 9</div>
+                <div class="lvl-card-cefr">C1</div>
+                <div class="lvl-card-desc">Proficiency</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FREQUENCY SELECTOR -->
+        <div class="calc-control-bar mt-16">
+          <div class="calc-left">
+            <span class="calc-title">وتيرة الحصص الأسبوعية الموصى بها:</span>
+            <div class="segmented-picker" id="freq-group">
+              <button type="button" class="seg-btn" data-val="2" onclick="selectSegment(this,'freq-group','f-freq');recalcAll()">حصتان / أسبوع</button>
+              <button type="button" class="seg-btn active" data-val="3" onclick="selectSegment(this,'freq-group','f-freq');recalcAll()">3 حصص (المثالي)</button>
+              <button type="button" class="seg-btn" data-val="4" onclick="selectSegment(this,'freq-group','f-freq');recalcAll()">4 حصص (مكثف)</button>
+              <button type="button" class="seg-btn" data-val="5" onclick="selectSegment(this,'freq-group','f-freq');recalcAll()">5 حصص (تسريع)</button>
+            </div>
+            <input type="hidden" id="f-freq" value="3">
+          </div>
+          <div class="calc-output-banner" id="calc-summary-badge">
+            <span class="calc-badge-icon">⚡</span>
+            <span class="calc-badge-text" id="calc-badge-text">خطة نموذجية: 8 – 10 أشهر (112 حصة)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: CURRICULA -->
+    <div class="tab-content" id="tab-curricula">
+      <div class="glass-section">
+        <div class="section-badge-header">
+          <div class="sec-icon-circle" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">📚</div>
+          <div>
+            <h3 class="sec-title">الحزم والمناهج الدراسية المعتمدة</h3>
+            <p class="sec-subtitle">اختر المناهج التي سيتلقاها الطالب لبناء خطة متعددة الأبعاد</p>
+          </div>
+        </div>
+
+        <div class="curricula-cards-stack">
+          <!-- Item 1 -->
+          <div class="curriculum-interactive-card checked" data-id="curr-core" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(255,87,34,0.15); color: #ff5722;">🌍</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">المنهج الأساسي (51Talk ME / Oxford CEJ)</h4>
+                <span class="curr-tag-pill green">العمود الفقري</span>
+              </div>
+              <p class="curr-desc">منهج أكسفورد المصمم حصرياً للطلاب في الشرق الأوسط. يعتمد حلقة التعلم المغلقة (8 حصص لكل وحدة) تبدأ بالمفردات وتنتهي بـ Carnival Review.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="curriculum-interactive-card" data-id="curr-nce" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(2,136,209,0.15); color: #0288d1;">📖</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">New Concept English (NCE)</h4>
+                <span class="curr-tag-pill blue">تفوق أكاديمي</span>
+              </div>
+              <p class="curr-desc">السلسلة البريطانية الأكثر شهرة عالمياً للتمكن من البناء اللغوي الرصين، القراءة التحليلية المعمقة، والاستعداد للامتحانات التنافسية المتقدمة.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="curriculum-interactive-card checked" data-id="curr-phonics" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(16,185,129,0.15); color: #10b981;">🔤</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">الصوتيات المتقدمة (Phonics & Decoding)</h4>
+                <span class="curr-tag-pill amber">أساس القراءة</span>
+              </div>
+              <p class="curr-desc">منهج تدريب صوتي يربط بين نطق الحروف وتهجئتها باستقلالية تامة، مما يمكّن الطفل من قراءة ونطق أي كلمة جديدة فور رؤيتها.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="curriculum-interactive-card checked" data-id="curr-oral" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(245,158,11,0.15); color: #f59e0b;">🗣️</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">المحادثة والطلاقة الشفهية (Practical Oral & Free Talk)</h4>
+                <span class="curr-tag-pill orange">كسر الخجل</span>
+              </div>
+              <p class="curr-desc">جلسات نقاش حرة في مواقف واقعية من الحياة اليومية (السفر، المطاعم، العلوم، الهوايات) لكسر حاجز الخوف وتنمية الثقة التعبيرية الفورية.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="curriculum-interactive-card" data-id="curr-grammar" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(124,58,237,0.15); color: #a855f7;">⚙️</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">إتقان القواعد وبناء الجمل (Grammar Mastery)</h4>
+                <span class="curr-tag-pill purple">دقة التعبير</span>
+              </div>
+              <p class="curr-desc">معالجة أخطاء الأزمنة وترتيب الجملة وبناء تراكيب لغوية صحيحة بطريقة وظيفية ممتعة بعيداً عن أسلوب الحفظ التلقيني الجاف.</p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="curriculum-interactive-card" data-id="curr-wecan" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(5,150,105,0.15); color: #059669;">🇸🇦</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">We Can! — دعم المنهج السعودي الرسمي</h4>
+                <span class="curr-tag-pill green">توافق وزاري</span>
+              </div>
+              <p class="curr-desc">مواءمة مباشرة لحصص الطالب مع سلسلة "We Can" المعتمدة في المدارس السعودية، لضمان تصدر الطالب لأعلى الدرجات المدرسية.</p>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="curriculum-interactive-card" data-id="curr-ielts" onclick="toggleCurriculumCard(this)">
+            <div class="curr-card-checkbox">✓</div>
+            <div class="curr-card-icon-wrap" style="background: rgba(225,29,72,0.15); color: #f43f5e;">🏆</div>
+            <div class="curr-card-info">
+              <div class="curr-title-row">
+                <h4 class="curr-name">التحضير لاختبار الآيلتس (IELTS Speaking Prep)</h4>
+                <span class="curr-tag-pill red">B1+ فما فوق</span>
+              </div>
+              <p class="curr-desc">إعداد مكثف للطلاب الأكبر سناً الراغبين في اجتياز اختبارات الكفاءة اللغوية والحصول على درجات استثنائية للقبول الجامعي والابتعاث.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 360° SELF-LEARNING ECOSYSTEM -->
+    <div class="tab-content" id="tab-ecosystem">
+      <div class="glass-section">
+        <div class="section-badge-header">
+          <div class="sec-icon-circle" style="background: linear-gradient(135deg, #ec4899, #be185d);">🌐</div>
+          <div>
+            <h3 class="sec-title">منظومة التعلم الذاتي 360° (Self-Learning Ecosystem)</h3>
+            <p class="sec-subtitle">الركائز الأربع الحيوية للتدريب والممارسة اليومية المتواصلة للطفل</p>
+          </div>
+        </div>
+
+        <!-- Banner with Link to Full Graphic -->
+        <div class="eco-promo-banner">
+          <div class="eco-promo-info">
+            <span class="eco-promo-tag">🌟 ميزة حصرية للطلاب</span>
+            <h4>English يفتح لهم عالم أكبر!</h4>
+            <p>منظومة متكاملة تجمع البودكاست، الذكاء الاصطناعي، تسجيل الحلقات، والمكتبة الرقمية في تجربة واحدة متناغمة.</p>
+          </div>
+          <button type="button" class="action-btn btn-view-infographic" onclick="openEcosystemModal()">
+            <span>🖼️ عرض الإنفوجرافيك الشامل</span>
+          </button>
+        </div>
+
+        <div class="addons-interactive-grid mt-16">
+          <!-- Pillar 1: Podcast -->
+          <label class="addon-smart-card checked eco-selector-card" id="card-eco-podcast">
+            <input type="checkbox" checked hidden onchange="syncEcoCheckbox(this,'card-eco-podcast','eco-podcast')">
+            <div class="addon-card-badge" style="background:#ec4899;">الركيزة 1 • Pink</div>
+            <div class="addon-icon-circle" style="background:rgba(236,72,153,0.15); color:#ec4899;">🎧</div>
+            <h5 class="addon-title">English Podcast</h5>
+            <p class="addon-desc">يحسن مهارة الاستماع والفهم والنطق عبر قصص ومواقف حقيقية ممتعة.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Pillar 2: AI Conversation -->
+          <label class="addon-smart-card checked eco-selector-card" id="card-eco-ai">
+            <input type="checkbox" checked hidden onchange="syncEcoCheckbox(this,'card-eco-ai','eco-ai')">
+            <div class="addon-card-badge" style="background:#0284c7;">الركيزة 2 • Blue</div>
+            <div class="addon-icon-circle" style="background:rgba(2,132,199,0.15); color:#0284c7;">🤖</div>
+            <h5 class="addon-title">AI Conversation Classes</h5>
+            <p class="addon-desc">تطوير مهارة التحدث والتواصل التلقائي في مواقف الحياة اليومية والسفر.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Pillar 3: IUR Recorded -->
+          <label class="addon-smart-card checked eco-selector-card" id="card-eco-iur">
+            <input type="checkbox" checked hidden onchange="syncEcoCheckbox(this,'card-eco-iur','eco-iur')">
+            <div class="addon-card-badge" style="background:#f59e0b;">الركيزة 3 • Amber</div>
+            <div class="addon-icon-circle" style="background:rgba(245,158,11,0.15); color:#f59e0b;">▶️</div>
+            <h5 class="addon-title">IUR Recorded Classes</h5>
+            <p class="addon-desc">مراجعة وتثبيت المحتوى ومشاهدة الدروس المسجلة في أي وقت لترسيخ الذاكرة.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Pillar 4: GRL Library -->
+          <label class="addon-smart-card checked eco-selector-card" id="card-eco-grl">
+            <input type="checkbox" checked hidden onchange="syncEcoCheckbox(this,'card-eco-grl','eco-grl')">
+            <div class="addon-card-badge" style="background:#10b981;">الركيزة 4 • Green</div>
+            <div class="addon-icon-circle" style="background:rgba(16,185,129,0.15); color:#10b981;">📚</div>
+            <h5 class="addon-title">GRL Leveled Library</h5>
+            <p class="addon-desc">مكتبة رقمية كبرى تضم أكثر من 1,000 قصة وفيديو وأنشطة تفاعلية مشوقة.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+        </div>
+
+        <div class="poster-toggle-strip mt-16">
+          <label class="checkbox-label-strip">
+            <input type="checkbox" id="chk-show-eco-poster" onchange="toggleEcoPoster(this.checked)">
+            <span>تضمين المخطط الإنفوجرافي الأصلي الملون داخل التقرير والـ PDF</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: ADD-ONS & EXCLUSIVE FEATURES -->
+    <div class="tab-content" id="tab-addons">
+      <div class="glass-section">
+        <div class="section-badge-header">
+          <div class="sec-icon-circle" style="background: linear-gradient(135deg, #059669, #10b981);">🎁</div>
+          <div>
+            <h3 class="sec-title">المميزات الحصرية والمواد التكميلية المرفقة</h3>
+            <p class="sec-subtitle">الأدوات التفاعلية والكتب التي يحصل عليها الطالب مع اشتراكه في 51Talk</p>
+          </div>
+        </div>
+
+        <div class="addons-interactive-grid">
+          <!-- Addon 1 -->
+          <label class="addon-smart-card checked" id="card-at-writing">
+            <input type="checkbox" checked hidden onchange="syncAddonCheckbox(this,'card-at-writing','at-writing')">
+            <div class="addon-card-badge">مشمول مجاناً</div>
+            <div class="addon-icon-circle">✍️</div>
+            <h5 class="addon-title">كتاب تحسين الكتابة</h5>
+            <p class="addon-desc">كراسة تفاعلية لتطوير مهارات الإملاء وتركيب الجمل والخط الإنجليزي الأنيق.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Addon 2 -->
+          <label class="addon-smart-card checked" id="card-at-grl">
+            <input type="checkbox" checked hidden onchange="syncAddonCheckbox(this,'card-at-grl','at-grl')">
+            <div class="addon-card-badge">مشمول مجاناً</div>
+            <div class="addon-icon-circle">📖</div>
+            <h5 class="addon-title">مكتبة GRL الرقمية</h5>
+            <p class="addon-desc">أكثر من 1,000 قصة تفاعلية مصنفة عالمياً تزيد حصيلة الطفل اللغوية باستمرار.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Addon 3 -->
+          <label class="addon-smart-card checked" id="card-at-treasure">
+            <input type="checkbox" checked hidden onchange="syncAddonCheckbox(this,'card-at-treasure','at-treasure')">
+            <div class="addon-card-badge">مشمول مجاناً</div>
+            <div class="addon-icon-circle">💎</div>
+            <h5 class="addon-title">كتاب كنز الكلمات المصور</h5>
+            <p class="addon-desc">معجم بصري ملون يحتوي على أكثر من 500 مفردة أساسية مع تطبيقات وأمثلة سياقية.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Addon 4 -->
+          <label class="addon-smart-card checked" id="card-at-ai">
+            <input type="checkbox" checked hidden onchange="syncAddonCheckbox(this,'card-at-ai','at-ai')">
+            <div class="addon-card-badge">حصري للذكاء الاصطناعي</div>
+            <div class="addon-icon-circle">🤖</div>
+            <h5 class="addon-title">36 حصة AI محاكاة تفاعلية</h5>
+            <p class="addon-desc">جلسات تدريب ذكية تمكّن الطفل من التحدث والممارسة مع روبوت 51Talk في أي وقت.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Addon 5 -->
+          <label class="addon-smart-card checked" id="card-at-report">
+            <input type="checkbox" checked hidden onchange="syncAddonCheckbox(this,'card-at-report','at-report')">
+            <div class="addon-card-badge">تقرير تحليلي دقيق</div>
+            <div class="addon-icon-circle">📊</div>
+            <h5 class="addon-title">تقرير الذكاء الاصطناعي الخماسي</h5>
+            <p class="addon-desc">تحليل دوري يقيس 5 أبعاد حيوية: الطلاقة، الثقة، سرعة الاستجابة، التفاعل، والنطق السليم.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+
+          <!-- Addon 6 -->
+          <label class="addon-smart-card checked" id="card-at-cert">
+            <input type="checkbox" checked hidden onchange="syncAddonCheckbox(this,'card-at-cert','at-cert')">
+            <div class="addon-card-badge">اعتماد CEFR دولي</div>
+            <div class="addon-icon-circle">🎓</div>
+            <h5 class="addon-title">شهادة إتمام المستوى المعتمدة</h5>
+            <p class="addon-desc">شهادة رسمية تصدر باسم الطالب عند اجتياز كل مستوى تؤكد كفاءته اللغوية الدولية.</p>
+            <div class="addon-switch"><span class="switch-ball"></span></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: ACADEMIC ADVISOR & SIGN-OFF -->
+    <div class="tab-content" id="tab-advisor">
+      <div class="glass-section">
+        <div class="section-badge-header">
+          <div class="sec-icon-circle" style="background: linear-gradient(135deg, #d97706, #f59e0b);">👨‍💼</div>
+          <div>
+            <h3 class="sec-title">بيانات واعتماد المستشار التعليمي</h3>
+            <p class="sec-subtitle">الجهة الأكاديمية المشرفة على تصميم الخطة والتوجيهات المخصصة لولي الأمر</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group span-2 highlight-input-group">
+            <label class="form-label" for="f-advisor-name">
+              <span>اسم المستشار التعليمي المشرف</span>
+              <span class="required-star">*</span>
+            </label>
+            <div class="input-with-icon">
+              <span class="input-icon">🖋️</span>
+              <input type="text" id="f-advisor-name" class="modern-input" value="أ. صابر حسين (Saber Hussien)" placeholder="اكتب اسم المستشار التعليمي كاملاً">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-advisor-title">المسمى الوظيفي والدرجة الأكاديمية</label>
+            <div class="input-with-icon">
+              <span class="input-icon">💼</span>
+              <input type="text" id="f-advisor-title" class="modern-input" value="كبير المستشارين الأكاديميين — 51Talk KSA">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-advisor-contact">رقم التواصل المباشر / الواتساب</label>
+            <div class="input-with-icon">
+              <span class="input-icon">📱</span>
+              <input type="text" id="f-advisor-contact" class="modern-input" value="+966 5X XXX XXXX" placeholder="+966 5X XXX XXXX">
+            </div>
+          </div>
+
+          <div class="form-group span-2">
+            <label class="form-label" for="f-notes">
+              <span>التوجيهات والوصايا الأكاديمية لولي الأمر والأسرة</span>
+            </label>
+            <textarea id="f-notes" class="modern-textarea" rows="4">يُنصح بالتركيز التام على إتمام جلسة التحضير المسبق (Preview) لمدة 5 دقائق قبل كل حصة لكسر حاجز الخوف، وتخصيص 15 دقيقة يومياً للقراءة الممتعة في مكتبة GRL لبناء مخزون لغوي عميق واستثنائي.</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ─────────────────────────────────────────────
+       RIGHT PANE: LIVE A4 EXECUTIVE PREVIEW
+  ───────────────────────────────────────────── -->
+  <section class="preview-pane">
+
+    <!-- THEME & COLOR PALETTE SELECTOR BAR -->
+    <div class="theme-palette-bar no-print">
+      <div class="palette-label">
+        <span class="palette-icon">🎨</span>
+        <span>اختر لون وثيم الخطة الدراسية:</span>
+      </div>
+      <div class="theme-options-pills">
+        <button type="button" class="theme-pill active" data-theme="theme-51talk" onclick="changeDocumentTheme(this, 'theme-51talk')">
+          <span class="theme-dot" style="background: linear-gradient(135deg, #0284c7, #ff5722);"></span>
+          <span>51Talk المشرق الملكي (أزرق وذهبي)</span>
+        </button>
+        <button type="button" class="theme-pill" data-theme="theme-saudi" onclick="changeDocumentTheme(this, 'theme-saudi')">
+          <span class="theme-dot" style="background: linear-gradient(135deg, #059669, #d97706);"></span>
+          <span>الزمردي السعودي (أخضر وذهبي)</span>
+        </button>
+        <button type="button" class="theme-pill" data-theme="theme-sunrise" onclick="changeDocumentTheme(this, 'theme-sunrise')">
+          <span class="theme-dot" style="background: linear-gradient(135deg, #ea580c, #f59e0b);"></span>
+          <span>شروق 51Talk المبهج (مرجاني وذهبي)</span>
+        </button>
+        <button type="button" class="theme-pill" data-theme="theme-oxford" onclick="changeDocumentTheme(this, 'theme-oxford')">
+          <span class="theme-dot" style="background: linear-gradient(135deg, #1e293b, #0284c7);"></span>
+          <span>أكسفورد الصافي (كحلي كلاسيكي)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FLOATING STUDIO TOOLBAR -->
+    <div class="preview-toolbar">
+      <div class="toolbar-left">
+        <span class="live-status-pill">
+          <span class="pulse-emerald-dot"></span>
+          <span>معاينة حية متطابقة للطباعة والـ PDF</span>
+        </span>
+      </div>
+
+      <div class="toolbar-right">
+        <button class="tool-btn" id="btn-print-doc" onclick="window.print()">
+          <span class="tool-icon">🖨️</span>
+          <span>طباعة فورية / حفظ كـ PDF</span>
+        </button>
+        <button class="tool-btn primary" id="btn-quick-pdf" onclick="exportPDF()">
+          <span class="tool-icon">📥</span>
+          <span>تحميل PDF متساوي الأبعاد</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         THE OFFICIAL DOCUMENT (STUDY PLAN DOSSIER)
+         Zero-Blank Exact Height Document
+    ═══════════════════════════════════════════ -->
+    <div class="sheet-container" id="sheet-wrapper">
+      <article class="official-study-doc theme-51talk" id="study-plan-doc">
+
+        <!-- ─── 1. LUXURIOUS HEADER BANNER ─── -->
+        <header class="doc-royal-header">
+          <div class="header-vignette-overlay">
+            <div class="doc-header-top-row">
+              <div class="doc-brand-lockup">
+                <div class="doc-symbol">51<span>Talk</span></div>
+                <div class="doc-brand-desc">
+                  <div class="doc-main-heading">الخطة الدراسية الفردية لتطوير اللغة الإنجليزية</div>
+                  <div class="doc-sub-heading">Individual Educational Development Plan — Saudi Arabia 🇸🇦</div>
+                </div>
+              </div>
+
+              <div class="doc-official-seal-badge">
+                <span class="seal-gold-text">OFFICIAL CERTIFIED PLAN</span>
+                <span class="seal-date" id="doc-render-date">📅 27 أكتوبر 2026</span>
+                <span class="seal-ref" id="doc-render-ref">رقم الاعتماد: 51T-SA-9821</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- ─── 2. STUDENT PROFILE & JOURNEY HERO CARD ─── -->
+        <section class="doc-student-hero-card">
+          <div class="student-avatar-box student-51talk-badge-emblem">
+            <div class="emblem-metallic-ring">
+              <div class="emblem-center-disc">
+                <span class="talk-emblem-main">51<span>Talk</span></span>
+                <span class="talk-emblem-sub">OFFICIAL</span>
+              </div>
+            </div>
+            <span class="student-ksa-pin">🇸🇦 51Talk KSA</span>
+          </div>
+
+          <div class="student-info-block">
+            <span class="doc-welcome-caption">الخطة التعليمية المخصصة للطالب المتميز:</span>
+            <h2 class="doc-student-fullname" id="doc-student-name">ريان فهد القحطاني</h2>
+            <div class="doc-student-pills-row">
+              <span class="doc-badge blue" id="doc-student-age">العمر: 9 سنوات</span>
+              <span class="doc-badge emerald" id="doc-student-school">المدرسة: حكومية (Saudi Public)</span>
+              <span class="doc-badge amber" id="doc-student-freq">الوتيرة الموصى بها: 3 حصص / أسبوع</span>
+            </div>
+          </div>
+
+          <!-- MOTIVATIONAL EXCELLENCE STAMP -->
+          <div class="hero-motivational-stamp">
+            <div class="stamp-stars-row">★★★★★</div>
+            <div class="stamp-ribbon-text">نخبة المستقبل 2030</div>
+            <div class="stamp-sub-text">51Talk VIP Scholar</div>
+          </div>
+
+          <div class="journey-visual-box">
+            <span class="journey-caption" id="lbl-journey-caption">مسار الارتقاء الأكاديمي</span>
+            <div class="journey-nodes-row">
+              <div class="journey-node current" id="doc-from-level">
+                <span class="node-state" id="lbl-node-from">البداية</span>
+                <strong class="node-lvl-text">Level S</strong>
+              </div>
+              <div class="journey-connector">
+                <span class="connector-track"></span>
+                <span class="connector-arrow" id="doc-journey-arrow">◀</span>
+              </div>
+              <div class="journey-node target" id="doc-to-level">
+                <span class="node-state" id="lbl-node-to">الهدف</span>
+                <strong class="node-lvl-text">Level 3</strong>
+              </div>
+            </div>
+            <div class="journey-eta-badge" id="doc-eta-text">المدة المتوقعة: 8 – 10 أشهر تقريباً</div>
+          </div>
+        </section>
+
+        <!-- ─── 3. MOTIVATIONAL ENERGY STRIP ─── -->
+        <div class="doc-motivational-banner">
+          <img src="img_rocket.jpg" alt="طالب ينطلق نحو الإتقان" class="mot-thumb-rocket">
+          <div class="mot-text-column">
+            <h4 id="mot-banner-title">🚀 الانطلاق نحو الطلاقة والتميز الدولي يبدأ من اليوم!</h4>
+            <p id="mot-banner-p">بالتكامل بين المعلم الأجنبي المتخصص، والذكاء الاصطناعي والمتابعة الأكاديمية المستمرة، سيصل الطالب لمستهدفه بثقة استثنائية.</p>
+          </div>
+          <img src="img_banner.jpg" alt="إنجازات وشهادات 51Talk" class="mot-thumb-banner">
+        </div>
+
+        <!-- ─── 4. CEFR ROADMAP SECTION ─── -->
+        <section class="doc-card-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge orange">🗺️</span>
+              <div>
+                <h3 id="sec-title-roadmap">خارطة طريق التطور الأكاديمي — مستويات 51Talk المعتمدة</h3>
+                <p class="chic-sub-caption" id="sec-sub-roadmap">تدرج تصاعدي مدروس يضمن إتقان مهارات التحدث والاستماع وفق معايير CEFR</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge gold" id="sec-tag-roadmap">معايير CEFR الدولية</span>
+          </div>
+
+          <div class="doc-roadmap-tiles-grid" id="doc-roadmap-container">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </section>
+
+        <!-- ─── 5. APPROVED CURRICULA SECTION ─── -->
+        <section class="doc-card-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge purple">📚</span>
+              <div>
+                <h3 id="sec-title-curricula">المناهج التعليمية المعتمدة في هذه الخطة الدراسية</h3>
+                <p class="chic-sub-caption" id="sec-sub-curricula">سلاسل تعليمية تفاعلية عالمية موجهة للتطبيق العملي وبناء الطلاقة</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge purple" id="sec-tag-curricula">مناهج معتمدة دولياً</span>
+          </div>
+
+          <div class="doc-curr-grid-3d" id="doc-curricula-container">
+            <!-- Dynamically populated via JS as modular 3D cards -->
+          </div>
+        </section>
+
+        <!-- ─── 6. CLOSED UNIT LOOP (8 LESSONS) ─── -->
+        <section class="doc-card-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge blue">🔄</span>
+              <div>
+                <h3 id="sec-title-unitloop">نظام الحلقة التعليمية المغلقة لكل وحدة دراسية (Unit Loop — 8 حصص)</h3>
+                <p class="chic-sub-caption" id="sec-sub-unitloop">منهجية أكسفورد التكرارية لضمان ترسيخ المفردات والقواعد بنسبة 100%</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge blue" id="sec-tag-unitloop">Oxford CEJ System</span>
+          </div>
+
+          <div class="doc-unit-loop-grid">
+            <div class="unit-loop-cell">
+              <span class="loop-badge" style="background:#ff5722;">L1 – L2</span>
+              <div class="loop-cell-info">
+                <strong id="loop-t-l1l2">المفردات والتراكيب اللغوية</strong>
+                <p id="loop-d-l1l2">اكتساب الكلمات المحورية وبناء القوالب اللغوية الأولى</p>
+              </div>
+            </div>
+
+            <div class="unit-loop-cell highlight-blue">
+              <span class="loop-badge" style="background:#0288d1;">L3</span>
+              <div class="loop-cell-info">
+                <strong id="loop-t-l3">حوار ومحادثة تطبيقية (Dialogue)</strong>
+                <p id="loop-d-l3">مراجعة وتوظيف L1+L2 في حوار حي مع المعلم</p>
+              </div>
+            </div>
+
+            <div class="unit-loop-cell highlight-purple">
+              <span class="loop-badge" style="background:#7c3aed;">L4</span>
+              <div class="loop-cell-info">
+                <strong id="loop-t-l4">الصوتيات ومخارج الحروف (Phonics)</strong>
+                <p id="loop-d-l4">تفكيك ودمج الأصوات والتهجئة السليمة للكلمات</p>
+              </div>
+            </div>
+
+            <div class="unit-loop-cell">
+              <span class="loop-badge" style="background:#ff5722;">L5 – L6</span>
+              <div class="loop-cell-info">
+                <strong id="loop-t-l5l6">توسيع المفردات والتراكيب (Structures)</strong>
+                <p id="loop-d-l5l6">حزمة إضافية متقدمة لرفع الثراء والعمق اللغوي</p>
+              </div>
+            </div>
+
+            <div class="unit-loop-cell highlight-green">
+              <span class="loop-badge" style="background:#059669;">L7</span>
+              <div class="loop-cell-info">
+                <strong id="loop-t-l7">القراءة والاستيعاب (Reading)</strong>
+                <p id="loop-d-l7">قراءة نص شامل يدمج L5+L6 وتطوير الفهم القرائي</p>
+              </div>
+            </div>
+
+            <div class="unit-loop-cell carnival-full-cell">
+              <span class="loop-badge" style="background: linear-gradient(135deg, #d97706, #f59e0b);">L8</span>
+              <div class="loop-cell-info">
+                <strong id="loop-t-l8">المهرجان الكرنفالي للمراجعة الشاملة (Carnival Review 🎉)</strong>
+                <p id="loop-d-l8">حصة تفاعلية مبهجة تراجع كل ما تعلمه الطالب من L1 إلى L7 مع ألعاب ومسابقات وقياس إتقان بنسبة 100%</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── 7. LESSON 25-MIN CYCLE INFOGRAPHIC ─── -->
+        <section class="doc-card-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge emerald">⏱️</span>
+              <div>
+                <h3 id="sec-title-cycle">دورة كل حصة دراسية مع 51Talk (25 دقيقة تفاعلية كاملة)</h3>
+                <p class="chic-sub-caption" id="sec-sub-cycle">بروتوكول تدريب ثلاثي المراحل يركز 100% من وقت المعلم الأجنبي على الطالب وحده</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge emerald" id="sec-tag-cycle">1-on-1 LIVE Protocol</span>
+          </div>
+
+          <div class="lesson-cycle-container">
+            <div class="cycle-stage-card">
+              <div class="stage-num-badge">1</div>
+              <div class="stage-icon">📖</div>
+              <h5 id="stage-t-1">التحضير المسبق (Preview)</h5>
+              <p id="stage-d-1">5 دقائق بالعربية عبر التطبيق الذكي لكسر الرهبة والتعرف المسبق على موضوع الحصة ومفرداتها.</p>
+            </div>
+            <div class="cycle-step-arrow" id="cycle-arrow-1">➔</div>
+            <div class="cycle-stage-card live-stage">
+              <div class="stage-num-badge live-dot-stage">2</div>
+              <div class="stage-icon">🎙️</div>
+              <h5 id="stage-t-2">الحصة المباشرة (1-on-1 LIVE)</h5>
+              <p id="stage-d-2">25 دقيقة تفاعلية فردية كاملة مع معلم أجنبي دولي معتمد يركز 100% من وقته على الطالب وحده.</p>
+            </div>
+            <div class="cycle-step-arrow" id="cycle-arrow-2">➔</div>
+            <div class="cycle-stage-card">
+              <div class="stage-num-badge">3</div>
+              <div class="stage-icon">🤖</div>
+              <h5 id="stage-t-3">التعزيز والمراجعة (AI Review)</h5>
+              <p id="stage-d-3">تمارين تكيفية بالذكاء الاصطناعي لترسيخ ما تعلمه الطالب، مع قراءة قصة موجهة من مكتبة GRL.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── 8. 360° SELF-LEARNING ECOSYSTEM SECTION ─── -->
+        <section class="doc-card-section doc-ecosystem-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge pink">🌟</span>
+              <div>
+                <h3 id="sec-title-ecosystem">منظومة التعلم الذاتي والبيئة التفاعلية الشاملة (360° Learning Ecosystem)</h3>
+                <p class="chic-sub-caption" id="sec-sub-ecosystem">4 ركائز متكاملة تضمن ممارسة يومية مستمرة وتفتح للطفل آفاقاً عالمية رحبة</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge gold" id="sec-tag-ecosystem">English يفتح لهم عالم أكبر!</span>
+          </div>
+
+          <!-- The 4 Modular 3D Ecosystem Cards Grid -->
+          <div class="doc-eco-grid-3d" id="doc-ecosystem-container">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <!-- Embedded Infographic Graphic (Toggleable) -->
+          <div class="doc-eco-poster-wrap" id="doc-eco-poster-box" style="display:none;">
+            <img src="img_ecosystem.jpg" alt="51Talk 360 Ecosystem Infographic" class="doc-eco-infographic-img">
+          </div>
+
+          <!-- Empowering Equation Banner -->
+          <div class="eco-equation-bar">
+            <div class="equation-brand-pill">
+              <span class="eq-brand">51<span>Talk</span></span>
+              <span class="eq-motto">Teach • Learn • Grow</span>
+            </div>
+            <div class="equation-pills-row">
+              <span class="eq-step-pill pink"><span class="eq-ico">🎧</span> English Podcast</span>
+              <span class="eq-plus">+</span>
+              <span class="eq-step-pill blue"><span class="eq-ico">🤖</span> AI Conversation</span>
+              <span class="eq-plus">+</span>
+              <span class="eq-step-pill amber"><span class="eq-ico">▶️</span> IUR Recorded</span>
+              <span class="eq-plus">+</span>
+              <span class="eq-step-pill green"><span class="eq-ico">📚</span> GRL Library</span>
+              <span class="eq-equals">=</span>
+              <span class="eq-result-pill" id="lbl-eq-result">🎯 أطفال واثقين يستخدمون English في حياتهم!</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── 9. EXCLUSIVE VALUE-ADDS ─── -->
+        <section class="doc-card-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge amber">✨</span>
+              <div>
+                <h3 id="sec-title-addons">المميزات الحصرية والمواد التكميلية المرفقة مع الطالب</h3>
+                <p class="chic-sub-caption" id="sec-sub-addons">حزمة أدوات تعليمية وتقارير ذكاء اصطناعي لدعم نمو مهارات الطفل في المنزل</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge amber" id="sec-tag-addons">VIP Exclusive Kit</span>
+          </div>
+
+          <div class="doc-addons-compact-grid" id="doc-addons-container">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </section>
+
+        <!-- ─── 9. ADVISOR OFFICIAL DIRECTIVES & ENDORSEMENT CARD ─── -->
+        <section class="doc-card-section doc-advisor-endorsement-section">
+          <div class="doc-section-header chic-frame">
+            <div class="chic-header-left">
+              <span class="chic-icon-badge gold">💡</span>
+              <div>
+                <h3 id="sec-title-advisor">توجيهات واعتماد المستشار التعليمي المشرف</h3>
+                <p class="chic-sub-caption" id="sec-sub-advisor">خطة إستراتيجية معتمدة وموجهة لولي الأمر لضمان تحقيق أعلى عائد تعليمي</p>
+              </div>
+            </div>
+            <span class="chic-tag-badge gold" id="sec-tag-advisor">اعتماد أكاديمي رسمي</span>
+          </div>
+
+          <div class="advisor-endorsement-card">
+            <div class="advisor-advice-content">
+              <div class="advice-quote-mark">“</div>
+              <p class="advisor-notes-text" id="doc-notes-text">
+                يُنصح بالتركيز التام على إتمام جلسة التحضير المسبق (Preview) لمدة 5 دقائق قبل كل حصة لكسر حاجز الخوف، وتخصيص 15 دقيقة يومياً للقراءة الممتعة في مكتبة GRL لبناء مخزون لغوي عميق واستثنائي.
+              </p>
+            </div>
+
+            <!-- ADVISOR SIGNATURE & VERIFICATION ROW -->
+            <div class="advisor-signoff-row">
+              <div class="advisor-signature-block">
+                <span class="advisor-label-small">المستشار التعليمي المعتمد:</span>
+                <strong class="advisor-name-prominent" id="doc-advisor-name-val">أ. صابر حسين (Saber Hussien)</strong>
+                <span class="advisor-title-prominent" id="doc-advisor-title-val">كبير المستشارين الأكاديميين — 51Talk KSA</span>
+                <span class="advisor-contact-prominent" id="doc-advisor-contact-val">📱 للتواصل: +966 5X XXX XXXX</span>
+              </div>
+
+              <div class="official-gold-seal">
+                <div class="seal-inner-circle">
+                  <span class="seal-logo">51Talk</span>
+                  <span class="seal-ribbon">VERIFIED PLAN</span>
+                  <small class="seal-geo">KSA ACADEMIC</small>
+                </div>
+              </div>
+
+              <div class="signature-line-block">
+                <span class="sig-title">التوقيع والاعتماد الأكاديمي</span>
+                <div class="digital-sig-draw">
+                  <span class="sig-cursive" id="doc-sig-cursive">Saber Hussien</span>
+                </div>
+                <span class="sig-date" id="doc-sig-date">معتمد بتاريخ: 27 أكتوبر 2026</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ─── 10. MOTIVATIONAL FOOTER & SAUDI VISION BRANDING ─── -->
+        <footer class="doc-royal-footer">
+          <div class="footer-col-msg">
+            <p class="footer-motto">«في 51Talk نؤمن بأن كل طفل في المملكة العربية السعودية يمتلك قدرات استثنائية تستحق أفضل رعاية تعليمية عالمية.»</p>
+            <div class="footer-links">
+              <span>🌐 www.51talk.com</span>
+              <span>🇸🇦 خدمة عملاء المملكة العربية السعودية</span>
+              <span>معتمد وفق المعايير الدولية لتعليم اللغة الإنجليزية</span>
+            </div>
+          </div>
+          <div class="footer-brand-mark">
+            <span class="footer-51logo">51Talk</span>
+            <span class="footer-tagline">Speak with the World</span>
+          </div>
+        </footer>
+
+      </article>
+    </div>
+
+  </section>
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     SHARE LINK MODAL (FOR COLLEAGUES)
+═══════════════════════════════════════════════ -->
+<div class="modal-backdrop" id="share-modal" style="display:none;" onclick="handleShareModalBackdropClick(event)">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <div class="modal-head-title">
+        <span class="modal-icon">🌐</span>
+        <div>
+          <h3>مشاركة المنصة مع الزملاء في العمل</h3>
+          <p>روابط مباشرة لفتح الموقع واستخدامه من أي جهاز أو شبكة</p>
+        </div>
+      </div>
+      <button class="modal-close-btn" onclick="document.getElementById('share-modal').style.display='none'">×</button>
+    </div>
+
+    <div class="modal-presets-list">
+      <!-- Public Cloud Link -->
+      <div class="share-link-card highlight-cloud">
+        <div class="share-card-header">
+          <div class="share-badge-tag green">🌍 رابط سحابي دائم 24/7 (لا ينقطع أبداً)</div>
+          <button class="copy-url-btn" onclick="copyLinkValue('https://husseinelaasar.github.io/51talk-study-plan/')">📋 نسخ الرابط</button>
+        </div>
+        <input type="text" class="share-url-input" readonly value="https://husseinelaasar.github.io/51talk-study-plan/" id="cloud-share-input">
+        <p class="share-hint">✅ رابط دائم ومستقر مستضاف سحابياً، متاح على مدار الساعة دون الحاجة لتشغيل جهاز الكمبيوتر.</p>
+      </div>
+
+      <!-- Local Network Link -->
+      <div class="share-link-card">
+        <div class="share-card-header">
+          <div class="share-badge-tag blue">🏢 رابط الشبكة المحلية (داخل المكتب / Wi-Fi)</div>
+          <button class="copy-url-btn" onclick="copyLinkValue('http://172.26.37.20:8085')">📋 نسخ الرابط</button>
+        </div>
+        <input type="text" class="share-url-input" readonly value="http://172.26.37.20:8085" id="lan-share-input">
+        <p class="share-hint">يعمل مع الزملاء المتصلين بنفس شبكة الواي فاي في المكتب.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PRESETS MODAL WINDOW
+═══════════════════════════════════════════════ -->
+<div class="modal-backdrop" id="presets-modal" style="display:none;" onclick="handleModalBackdropClick(event)">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <div class="modal-head-title">
+        <span class="modal-icon">⚡</span>
+        <div>
+          <h3>نماذج استشارية جاهزة للاختيار السريع</h3>
+          <p>قوالب معدة مسبقاً من خبراء 51Talk تتناسب مع أهداف أولياء الأمور الشائعة</p>
+        </div>
+      </div>
+      <button class="modal-close-btn" onclick="document.getElementById('presets-modal').style.display='none'">×</button>
+    </div>
+
+    <div class="modal-presets-list">
+      <div class="modal-preset-item" onclick="applyConsultancyPreset('starter')">
+        <div class="preset-badge-icon" style="background: rgba(255,87,34,0.15); color: #ff5722;">🚀</div>
+        <div class="preset-content">
+          <h4>التأسيس المبكر والصوتيات (Early Foundation & Phonics)</h4>
+          <p class="preset-meta">Level S ➔ Level 2 | مناسب للأطفال 4–7 سنوات | التركيز على الحروف، النطق، والقصص المصورة</p>
+          <div class="preset-tags">
+            <span>الصوتيات</span>
+            <span>المنهج الأساسي</span>
+            <span>كنز الكلمات</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-preset-item" onclick="applyConsultancyPreset('academic')">
+        <div class="preset-badge-icon" style="background: rgba(2,136,209,0.15); color: #0288d1;">📚</div>
+        <div class="preset-content">
+          <h4>التميز المدرسي والتفوق الأكاديمي (Saudi School Excellence)</h4>
+          <p class="preset-meta">Level 1 ➔ Level 4 | مناسب لطلاب الابتدائي والإعدادي | توافق مع We Can + NCE + كتاب الكتابة</p>
+          <div class="preset-tags">
+            <span>منهج We Can</span>
+            <span>NCE</span>
+            <span>القواعد</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-preset-item" onclick="applyConsultancyPreset('fluency')">
+        <div class="preset-badge-icon" style="background: rgba(245,158,11,0.15); color: #f59e0b;">🗣️</div>
+        <div class="preset-content">
+          <h4>الطلاقة السريعة وكسر حاجز الخجل (Fast Fluency & Speaking)</h4>
+          <p class="preset-meta">Level 2 ➔ Level 5 | مناسب للطلاب الخجولين | مكثف 4 حصص أسبوعياً + Free Talk</p>
+          <div class="preset-tags">
+            <span>Free Talk</span>
+            <span>36 حصة AI</span>
+            <span>مكتبة GRL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-preset-item" onclick="applyConsultancyPreset('mastery')">
+        <div class="preset-badge-icon" style="background: rgba(124,58,237,0.15); color: #a855f7;">🏆</div>
+        <div class="preset-content">
+          <h4>الإتقان الشامل والتأهل الدولي (Comprehensive Mastery & IELTS)</h4>
+          <p class="preset-meta">Level 3 ➔ Level 7+ | للمراهقين والتحضير للجامعات والابتعاث | IELTS + NCE + كتابة أكاديمية</p>
+          <div class="preset-tags">
+            <span>IELTS Speaking</span>
+            <span>شهادات معتمدة</span>
+            <span>تقرير AI خماسي</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     INFOGRAPHIC PREVIEW MODAL (360° ECOSYSTEM)
+═══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="eco-infographic-modal">
+  <div class="modal-card modal-infographic-card">
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <span class="modal-icon">🌟</span>
+        <div>
+          <h3>المخطط الشامل لمنظومة التعلم الذاتي (51Talk 360° Ecosystem)</h3>
+          <p>English Podcast • AI Conversation Classes • IUR Recorded Classes • GRL Library</p>
+        </div>
+      </div>
+      <button class="modal-close-btn" onclick="closeEcosystemModal()">✕</button>
+    </div>
+    <div class="modal-body-infographic">
+      <img src="img_ecosystem.jpg" alt="51Talk 360 Ecosystem Infographic Full" class="modal-infographic-full-img">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="tool-btn" onclick="window.open('img_ecosystem.jpg', '_blank')">🔍 فتح الصورة بدقة فائقة</button>
+      <button type="button" class="tool-btn primary" onclick="closeEcosystemModal()">إغلاق</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

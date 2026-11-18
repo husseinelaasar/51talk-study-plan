@@ -46,9 +46,24 @@ html, body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   min-height: 100vh;
-  direction: rtl;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+html[dir="rtl"], body[dir="rtl"], [dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="ltr"], body[dir="ltr"], [dir="ltr"] {
+  direction: ltr;
+}
+
+body.app-lang-en {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+}
+
+body.app-lang-ar {
+  font-family: 'Cairo', sans-serif;
 }
 
 /* ─── AMBIENT GLOW ORBS ─── */
@@ -1289,10 +1304,17 @@ html, body {
   color: #ffffff;
   letter-spacing: normal !important;
   word-spacing: normal !important;
-  direction: rtl !important;
   unicode-bidi: normal !important;
   text-rendering: geometricPrecision;
   white-space: nowrap;
+}
+
+[dir="rtl"] .doc-main-heading {
+  direction: rtl !important;
+}
+
+[dir="ltr"] .doc-main-heading {
+  direction: ltr !important;
 }
 
 .doc-sub-heading {
@@ -3408,4 +3430,52 @@ html, body {
   .preview-pane {
     position: static;
   }
+}
+
+/* ═══════════════════════════════════════════════
+   BILINGUAL & LTR ENHANCEMENTS
+═══════════════════════════════════════════════ */
+[dir="ltr"] .input-icon {
+  right: auto;
+  left: 14px;
+}
+
+[dir="ltr"] .modern-input {
+  padding: 11px 14px 11px 42px;
+}
+
+[dir="ltr"] .current-selected-tag,
+[dir="ltr"] .target-selected-tag {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="ltr"] .curriculum-interactive-card::before {
+  right: auto;
+  left: 0;
+}
+
+[dir="ltr"] .advisor-advice-content {
+  padding-right: 0;
+  padding-left: 28px;
+}
+
+[dir="ltr"] .advice-quote-mark {
+  right: auto;
+  left: 0;
+}
+
+[dir="ltr"] .eq-motto {
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 0;
+  padding-left: 6px;
+}
+
+.doc-lang-en {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+}
+
+.doc-lang-ar {
+  font-family: 'Cairo', sans-serif !important;
 }

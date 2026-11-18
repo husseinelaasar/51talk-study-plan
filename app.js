@@ -340,6 +340,7 @@ const ECOSYSTEM_DATABASE = {
 const CONSULTANCY_PRESETS = {
   starter: {
     name: 'محمد عبدالله الغامدي',
+    name_en: 'Mohammed Al-Ghamdi',
     age: 6,
     school: 'حكومية (Saudi Public)',
     currLvl: -1,
@@ -348,12 +349,16 @@ const CONSULTANCY_PRESETS = {
     curricula: ['curr-core', 'curr-phonics', 'curr-oral'],
     addons: ['at-writing', 'at-grl', 'at-treasure', 'at-ai', 'at-report', 'at-cert'],
     advisorName: 'أ. صابر حسين (Saber Hussien)',
+    advisorName_en: 'Saber Hussien (Academic Advisor)',
     advisorTitle: 'كبير المستشارين الأكاديميين — 51Talk KSA',
+    advisorTitle_en: 'Senior Academic Advisor — 51Talk KSA',
     advisorContact: '+966 50 123 4567',
-    notes: 'الطالب في مرحلة التأسيس الأولى. التركيز الكامل على الصوتيات ومخارج الحروف والمفردات البسيطة. يُنصح بجلسات قصيرة منتظمة مع تشجيع الوالدين في التطبيق المنزلي.'
+    notes: 'الطالب في مرحلة التأسيس الأولى. التركيز الكامل على الصوتيات ومخارج الحروف والمفردات البسيطة. يُنصح بجلسات قصيرة منتظمة مع تشجيع الوالدين في التطبيق المنزلي.',
+    notes_en: 'Student is at the primary foundation stage. Full focus on phonics, phonemic awareness, and foundational vocabulary. Regular short sessions recommended with parental encouragement at home.'
   },
   academic: {
     name: 'عبدالرحمن سعد الزهراني',
+    name_en: 'Abdulrahman Al-Zahrani',
     age: 11,
     school: 'حكومية (Saudi Public)',
     currLvl: 1,
@@ -362,12 +367,16 @@ const CONSULTANCY_PRESETS = {
     curricula: ['curr-core', 'curr-nce', 'curr-wecan', 'curr-grammar'],
     addons: ['at-writing', 'at-grl', 'at-treasure', 'at-ai', 'at-report', 'at-cert'],
     advisorName: 'أ. صابر حسين (Saber Hussien)',
+    advisorName_en: 'Saber Hussien (Academic Advisor)',
     advisorTitle: 'كبير المستشارين الأكاديميين — 51Talk KSA',
+    advisorTitle_en: 'Senior Academic Advisor — 51Talk KSA',
     advisorContact: '+966 50 123 4567',
-    notes: 'الهدف الاستراتيجي هو التفوق المدرسي التام. التوافق المباشر مع منهج We Can الوزاري مع التوسع عبر NCE يضمن تفوق الطالب في اختبارات مادة الإنجليزي وبناء أساس قوي.'
+    notes: 'الهدف الاستراتيجي هو التفوق المدرسي التام. التوافق المباشر مع منهج We Can الوزاري مع التوسع عبر NCE يضمن تفوق الطالب في اختبارات مادة الإنجليزي وبناء أساس قوي.',
+    notes_en: 'Strategic objective is absolute school excellence. Direct alignment with the Saudi We Can curriculum combined with NCE expansion guarantees top English test scores and an unshakeable academic foundation.'
   },
   fluency: {
     name: 'نورة خالد الشهراني',
+    name_en: 'Noura Al-Shahrani',
     age: 13,
     school: 'أهلية (Private)',
     currLvl: 2,
@@ -376,12 +385,16 @@ const CONSULTANCY_PRESETS = {
     curricula: ['curr-core', 'curr-oral', 'curr-grammar'],
     addons: ['at-grl', 'at-ai', 'at-report', 'at-cert'],
     advisorName: 'أ. سارة المنصور (Sara Al-Mansoor)',
+    advisorName_en: 'Sara Al-Mansoor',
     advisorTitle: 'مستشارة التطوير والطلاقة الشفهية — 51Talk KSA',
+    advisorTitle_en: 'Oral Fluency & Spoken Development Specialist — 51Talk KSA',
     advisorContact: '+966 55 987 6543',
-    notes: 'الطالبة تعاني من بعض التردد في التحدث أمام الآخرين. خطة الـ 4 حصص الأسبوعية بالتركيز على الـ Free Talk ستحقق قفزة نوعية في الثقة التعبيرية خلال 90 يوماً.'
+    notes: 'الطالبة تعاني من بعض التردد في التحدث أمام الآخرين. خطة الـ 4 حصص الأسبوعية بالتركيز على الـ Free Talk ستحقق قفزة نوعية في الثقة التعبيرية خلال 90 يوماً.',
+    notes_en: 'Student experiences hesitation when speaking in public. The 4-lesson weekly plan focusing on Free Talk will deliver a major breakthrough in expressive conversational confidence within 90 days.'
   },
   mastery: {
     name: 'فيصل طارق القرشي',
+    name_en: 'Faisal Al-Qurashi',
     age: 16,
     school: 'عالمية (International)',
     currLvl: 3,
@@ -390,9 +403,12 @@ const CONSULTANCY_PRESETS = {
     curricula: ['curr-core', 'curr-nce', 'curr-oral', 'curr-grammar', 'curr-ielts'],
     addons: ['at-writing', 'at-grl', 'at-treasure', 'at-ai', 'at-report', 'at-cert'],
     advisorName: 'د. خالد العمري (Dr. Khaled Al-Omari)',
+    advisorName_en: 'Dr. Khaled Al-Omari',
     advisorTitle: 'رئيس وحدة التأهيل الدولي والابتعاث — 51Talk KSA',
+    advisorTitle_en: 'Head of International Qualifications & Scholarships — 51Talk KSA',
     advisorContact: '+966 54 321 0987',
-    notes: 'خطة إعداد مكثفة موجهة لاختبار IELTS والقبول بالجامعات المرموقة. التركيز على الكتابة الأكاديمية والطلاقة التنافسية في الحوار وفق معايير B2+ المعتمدة.'
+    notes: 'خطة إعداد مكثفة موجهة لاختبار IELTS والقبول بالجامعات المرموقة. التركيز على الكتابة الأكاديمية والطلاقة التنافسية في الحوار وفق معايير B2+ المعتمدة.',
+    notes_en: 'Intensive preparation plan targeting IELTS and prestigious university admissions. Rigorous focus on academic writing and spontaneous debate fluency according to certified CEFR B2+ criteria.'
   }
 };
 
@@ -409,6 +425,7 @@ let state = {
   targetLvl:      3,
   freq:           3,
   theme:          'theme-51talk',
+  refCode:        '51T-SA-' + Math.floor(1000 + Math.random() * 9000),
   curricula:      new Set(['curr-core', 'curr-phonics', 'curr-oral']),
   addons:         new Set(['at-writing', 'at-grl', 'at-treasure', 'at-ai', 'at-report', 'at-cert']),
   ecosystem:      new Set(['eco-podcast', 'eco-ai', 'eco-iur', 'eco-grl']),
@@ -469,7 +486,25 @@ function getFormattedDate(lang) {
 }
 
 function getReferenceCode() {
-  return '51T-SA-' + Math.floor(1000 + Math.random() * 9000);
+  if (!state.refCode) {
+    state.refCode = '51T-SA-' + Math.floor(1000 + Math.random() * 9000);
+  }
+  return state.refCode;
+}
+
+function formatSchoolType(school, lang) {
+  const isEn = lang === 'en';
+  if (!school) return isEn ? 'Saudi Public School' : 'حكومية';
+  if (school.includes('حكومية') || school.toLowerCase().includes('public')) {
+    return isEn ? 'Saudi Public School' : 'حكومية (Saudi Public)';
+  }
+  if (school.includes('أهلية') || school.toLowerCase().includes('private')) {
+    return isEn ? 'Private School' : 'أهلية (Private)';
+  }
+  if (school.includes('عالمية') || school.toLowerCase().includes('international')) {
+    return isEn ? 'International School' : 'عالمية (International)';
+  }
+  return school;
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -506,7 +541,7 @@ function renderStudio() {
     $('calc-badge-text').textContent = isEn ? 'Please select a target level higher than current' : 'يرجى اختيار مستوى مستهدف أعلى من المستوى الحالي';
   }
 
-  $('metric-advisor').textContent = advisorName || (isEn ? 'Certified Advisor' : 'المستشار المعتمد');
+  $('metric-advisor').textContent = advisorName || (isEn ? 'Certified Academic Advisor' : 'المستشار المعتمد');
 
   // 2. DOCUMENT HEADER & METAS
   $('doc-render-date').textContent = `📅 ${getFormattedDate(lang)}`;
@@ -519,7 +554,7 @@ function renderStudio() {
   }
   $('doc-student-name').textContent = name || (isEn ? 'Our Star Student' : 'طالبنا المتميز');
   $('doc-student-age').textContent = isEn ? `Age: ${age} Years` : `العمر: ${age} سنوات`;
-  $('doc-student-school').textContent = isEn ? `School: ${school}` : `المدرسة: ${school}`;
+  $('doc-student-school').textContent = isEn ? `School: ${formatSchoolType(school, 'en')}` : `المدرسة: ${formatSchoolType(school, 'ar')}`;
   $('doc-student-freq').textContent = isEn ? `Recommended: ${freq} Lessons / Week` : `الوتيرة الموصى بها: ${freq} حصص / أسبوع`;
 
   $('doc-from-level').querySelector('.node-lvl-text').textContent = currName;
@@ -528,8 +563,6 @@ function renderStudio() {
   // Arrow from smaller to larger!
   const journeyArrow = $('doc-journey-arrow');
   if (journeyArrow) {
-    // In RTL: Start on right, Target on left -> Arrow points LEFT (◀)
-    // In LTR: Start on left, Target on right -> Arrow points RIGHT (▶)
     journeyArrow.textContent = isEn ? '▶' : '◀';
   }
 
@@ -891,20 +924,307 @@ function lockStudioPlatform() {
 }
 
 // ──────────────────────────────────────────────────────────────────────
-// 5. BILINGUAL LANGUAGE ENGINE (ARABIC / ENGLISH - USER REQUIREMENT 2)
+// 5. BILINGUAL LANGUAGE ENGINE (ARABIC / ENGLISH - FULL SUITE)
 // ──────────────────────────────────────────────────────────────────────
+
+const I18N_UI = {
+  // Brand Header
+  'brand-title-text':      { ar: 'استوديو الخطط الدراسية المخصصة', en: 'Smart Study Plan Studio' },
+  'saudi-flag-badge-text': { ar: '🇸🇦 المملكة العربية السعودية', en: '🇸🇦 Kingdom of Saudi Arabia' },
+  'brand-subtitle-text':   { ar: 'نظام التخطيط الأكاديمي الذكي المعتمد لمعايير CEFR الدولية', en: 'Intelligent Academic Planning System — CEFR Certified' },
+  'lbl-lock-btn':          { ar: 'قفل المنصة', en: 'Lock Studio' },
+  'btn-lock-screen':       { ar: 'قفل المنصة', en: 'Lock Studio', type: 'title' },
+  'lbl-share-btn':         { ar: 'مشاركة الرابط للزملاء', en: 'Share Link' },
+  'lbl-presets-btn':       { ar: 'نماذج استشارية جاهزة', en: 'Consultancy Presets' },
+  'lbl-whatsapp-btn':      { ar: 'نسخ ملخص الواتساب', en: 'Copy WhatsApp Summary' },
+  'lbl-pdf-btn':           { ar: 'تحميل وثيقة PDF (متطابقة تماماً)', en: 'Download PDF (Pixel-Perfect)' },
+
+  // Live Metrics Ribbon
+  'lbl-metric-path':     { ar: 'المسار الأكاديمي المختار', en: 'Selected Academic Path' },
+  'lbl-metric-duration': { ar: 'المدة الزمنية المتوقعة', en: 'Estimated Duration' },
+  'lbl-metric-lessons':  { ar: 'إجمالي الحصص التعليمية', en: 'Total Academic Lessons' },
+  'lbl-metric-advisor':  { ar: 'المستشار الأكاديمي المعتمد', en: 'Certified Academic Advisor' },
+
+  // Sidebar Navigation Tabs (1 - 5)
+  'tab-nav-student':   { ar: 'بيانات الطالب والهدف', en: 'Student Profile & Goals' },
+  'tab-nav-curricula': { ar: 'المناهج والمسار', en: 'Curricula & Pathways' },
+  'tab-nav-eco':       { ar: 'منظومة التعلم 360°', en: '360° Learning Ecosystem' },
+  'tab-nav-addons':    { ar: 'المميزات الإضافية', en: 'Add-ons & Privileges' },
+  'tab-nav-advisor':   { ar: 'اعتماد المستشار التعليمي', en: 'Advisor Endorsement' },
+
+  // Tab 1: Student & Goals
+  'sec-title-student':    { ar: 'بيانات الطالب والمعلومات الأكاديمية', en: 'Student Information & Academic Profile' },
+  'sec-sub-student':      { ar: 'المعلومات الشخصية التي ستظهر على التقرير الرسمي', en: 'Personal details displayed on the official certified report' },
+  'lbl-f-name':           { ar: 'اسم الطالب / الطالبة *', en: 'Student Full Name *' },
+  'f-name':               { ar: 'اكتب اسم الطالب كاملاً', en: 'Enter student full name', type: 'placeholder' },
+  'lbl-f-age':            { ar: 'العمر الحالي', en: 'Current Age' },
+  'lbl-f-school':         { ar: 'نوع المدرسة بالمملكة', en: 'School Type in KSA' },
+  'btn-school-public':    { ar: 'حكومية', en: 'Public' },
+  'btn-school-private':   { ar: 'أهلية', en: 'Private' },
+  'btn-school-intl':      { ar: 'عالمية', en: 'International' },
+  'sec-title-cefr':       { ar: 'مصفوفة المستويات الأكاديمية (CEFR Framework)', en: 'Academic Level Matrix (CEFR Framework)' },
+  'sec-sub-cefr':         { ar: 'اختر المستوى الحالي بدقة والمستوى المستهدف الذي يسعى إليه الطالب', en: 'Select current starting level and target milestone' },
+  'lbl-curr-lvl-header':   { ar: 'المستوى الحالي للطالب', en: 'Current Starting Level' },
+  'lbl-target-lvl-header': { ar: 'المستوى المستهدف تحقيقه', en: 'Target Milestone Level' },
+  'lbl-calc-freq':        { ar: 'وتيرة الحصص الأسبوعية الموصى بها:', en: 'Recommended Weekly Lesson Pace:' },
+  'btn-freq-2':           { ar: 'حصتان / أسبوع', en: '2 Lessons / Wk' },
+  'btn-freq-3':           { ar: '3 حصص (المثالي)', en: '3 Lessons (Ideal)' },
+  'btn-freq-4':           { ar: '4 حصص (مكثف)', en: '4 Lessons (Intensive)' },
+  'btn-freq-5':           { ar: '5 حصص (تسريع)', en: '5 Lessons (Accelerated)' },
+
+  // Tab 2: Curricula Stack
+  'sec-title-tab-curricula': { ar: 'الحزم والمناهج الدراسية المعتمدة', en: 'Approved Curricula & Educational Programs' },
+  'sec-sub-tab-curricula':   { ar: 'اختر المناهج التي سيتلقاها الطالب لبناء خطة متعددة الأبعاد', en: 'Select pedagogical tracks to build a multidimensional learning plan' },
+
+  // Tab 3: Ecosystem
+  'sec-title-tab-eco':   { ar: 'منظومة التعلم الذاتي 360° (Self-Learning Ecosystem)', en: '360° Self-Learning Ecosystem' },
+  'sec-sub-tab-eco':     { ar: 'الركائز الأربع الحيوية للتدريب والممارسة اليومية المتواصلة للطفل', en: '4 foundational pillars securing daily practice and global fluency' },
+  'lbl-eco-promo-tag':   { ar: '🌟 ميزة حصرية للطلاب', en: '🌟 Exclusive Student Feature' },
+  'lbl-eco-promo-title': { ar: 'English يفتح لهم عالم أكبر!', en: 'English Opens a Bigger World!' },
+  'lbl-eco-promo-desc':  { ar: 'منظومة متكاملة تجمع البودكاست، الذكاء الاصطناعي، تسجيل الحلقات، والمكتبة الرقمية في تجربة واحدة متناغمة.', en: 'Integrated ecosystem combining podcasts, AI, recorded sessions, and digital library.' },
+  'lbl-eco-promo-btn':   { ar: '🖼️ عرض الإنفوجرافيك الشامل', en: '🖼️ View Comprehensive Infographic' },
+  'lbl-eco-poster-check':{ ar: 'تضمين المخطط الإنفوجرافي الأصلي الملون داخل التقرير والـ PDF', en: 'Embed official color infographic inside document and PDF' },
+
+  // Tab 4: Addons
+  'sec-title-tab-addons': { ar: 'المميزات الحصرية والمواد التكميلية المرفقة', en: 'Exclusive Academic Supplements & Value-Adds' },
+  'sec-sub-tab-addons':   { ar: 'الأدوات التفاعلية والكتب التي يحصل عليها الطالب مع اشتراكه في 51Talk', en: 'Interactive tools, AI analytics, and books included with enrollment' },
+
+  // Tab 5: Advisor
+  'sec-title-tab-advisor':{ ar: 'بيانات واعتماد المستشار التعليمي', en: 'Academic Advisor Credentials & Endorsement' },
+  'sec-sub-tab-advisor':  { ar: 'الجهة الأكاديمية المشرفة على تصميم الخطة والتوجيهات المخصصة لولي الأمر', en: 'Supervising academic authority and custom directives for parents' },
+  'lbl-advisor-name':     { ar: 'اسم المستشار التعليمي المشرف', en: 'Supervising Academic Advisor Name' },
+  'f-advisor-name':       { ar: 'اكتب اسم المستشار التعليمي كاملاً', en: 'Enter advisor full name', type: 'placeholder' },
+  'lbl-advisor-title':    { ar: 'المسمى الوظيفي والدرجة الأكاديمية', en: 'Job Title & Academic Designation' },
+  'lbl-advisor-contact':  { ar: 'رقم التواصل المباشر / الواتساب', en: 'Direct Contact / WhatsApp Number' },
+  'lbl-advisor-notes':    { ar: 'التوجيهات والوصايا الأكاديمية لولي الأمر والأسرة', en: 'Academic Directives & Guidance for Parents' },
+
+  // Palette & Live Preview Toolbar
+  'lbl-palette-title': { ar: 'اختر لون وثيم الخطة الدراسية:', en: 'Select Study Plan Theme Palette:' },
+  'lbl-theme-51talk':  { ar: '51Talk المشرق الملكي (أزرق وذهبي)', en: '51Talk Royal Blue (Blue & Gold)' },
+  'lbl-theme-saudi':   { ar: 'الزمردي السعودي (أخضر وذهبي)', en: 'Saudi Emerald (Green & Gold)' },
+  'lbl-theme-sunrise': { ar: 'شروق 51Talk المبهج (مرجاني وذهبي)', en: '51Talk Sunrise (Coral & Gold)' },
+  'lbl-theme-oxford':  { ar: 'أكسفورد الصافي (كحلي كلاسيكي)', en: 'Oxford Classic (Navy & Slate)' },
+  'lbl-live-status':   { ar: 'معاينة حية متطابقة للطباعة والـ PDF', en: 'Live Pixel-Perfect PDF & Print Preview' },
+  'lbl-btn-print':     { ar: 'طباعة فورية / حفظ كـ PDF', en: 'Instant Print / Save as PDF' },
+  'lbl-btn-quick-pdf': { ar: 'تحميل PDF متساوي الأبعاد', en: 'Download Proportional PDF' },
+
+  // Document Footer & Sign-off
+  'lbl-advisor-label-small': { ar: 'المستشار التعليمي المعتمد:', en: 'Certified Academic Advisor:' },
+  'lbl-sig-title':           { ar: 'التوقيع والاعتماد الأكاديمي', en: 'Academic Signature & Accreditation' },
+  'lbl-footer-motto':        { ar: '«في 51Talk نؤمن بأن كل طفل في المملكة العربية السعودية يمتلك قدرات استثنائية تستحق أفضل رعاية تعليمية عالمية.»', en: '“At 51Talk, we believe every child in the Kingdom of Saudi Arabia holds exceptional potential deserving world-class education.”' },
+  'lbl-footer-link2':        { ar: '🇸🇦 خدمة عملاء المملكة العربية السعودية', en: '🇸🇦 Saudi Arabia Customer Service' },
+  'lbl-footer-link3':        { ar: 'معتمد وفق المعايير الدولية لتعليم اللغة الإنجليزية', en: 'Accredited by International CEFR English Standards' },
+
+  // Share Modal
+  'lbl-share-modal-title': { ar: 'مشاركة المنصة مع الزملاء في العمل', en: 'Share Platform with Colleagues' },
+  'lbl-share-modal-sub':   { ar: 'روابط مباشرة لفتح الموقع واستخدامه من أي جهاز أو شبكة', en: 'Direct links to access the platform from any device or network' },
+  'lbl-share-cloud-tag':   { ar: '🌍 رابط سحابي دائم 24/7 (لا ينقطع أبداً)', en: '🌍 Permanent Cloud Link 24/7 (High Availability)' },
+  'btn-copy-cloud':        { ar: '📋 نسخ الرابط', en: '📋 Copy Link' },
+  'lbl-share-cloud-hint':  { ar: '✅ رابط دائم ومستقر مستضاف سحابياً، متاح على مدار الساعة دون الحاجة لتشغيل جهاز الكمبيوتر.', en: '✅ Permanent cloud-hosted URL, accessible 24/7 without host machine dependency.' },
+  'lbl-share-lan-tag':     { ar: '🏢 رابط الشبكة المحلية (داخل المكتب / Wi-Fi)', en: '🏢 Local Network URL (Office / Wi-Fi)' },
+  'btn-copy-lan':          { ar: '📋 نسخ الرابط', en: '📋 Copy Link' },
+  'lbl-share-lan-hint':    { ar: 'يعمل مع الزملاء المتصلين بنفس شبكة الواي فاي في المكتب.', en: 'Works for colleagues connected to the same office Wi-Fi network.' },
+
+  // Presets Modal
+  'lbl-presets-modal-title': { ar: 'نماذج استشارية جاهزة للاختيار السريع', en: 'Ready-made Consultancy Presets' },
+  'lbl-presets-modal-sub':   { ar: 'قوالب معدة مسبقاً من خبراء 51Talk تتناسب مع أهداف أولياء الأمور الشائعة', en: 'Pre-configured templates tailored by 51Talk specialists for common goals' },
+
+  // Infographic Modal
+  'lbl-infographic-modal-title': { ar: 'المخطط الشامل لمنظومة التعلم الذاتي (51Talk 360° Ecosystem)', en: 'Comprehensive 51Talk 360° Ecosystem Infographic' },
+  'lbl-infographic-modal-sub':   { ar: 'English Podcast • AI Conversation Classes • IUR Recorded Classes • GRL Library', en: 'English Podcast • AI Conversation Classes • IUR Recorded Classes • GRL Library' },
+  'btn-infographic-open-hd':     { ar: '🔍 فتح الصورة بدقة فائقة', en: '🔍 View Ultra-HD Image' },
+  'btn-infographic-close':       { ar: 'إغلاق', en: 'Close' },
+
+  // Security Auth Gate Overlay
+  'lbl-auth-badge':    { ar: 'VIP Security Gate • Big Team 01', en: 'VIP Security Gate • Big Team 01' },
+  'lbl-auth-title':    { ar: 'استوديو الخطط الدراسية الذكية', en: 'Smart Study Plan Studio' },
+  'lbl-auth-desc':     { ar: 'يرجى إدخال كلمة المرور المصرح بها للدخول إلى المنصة', en: 'Please enter authorized passkey to access platform' },
+  'lbl-auth-remember': { ar: 'تذكر هذا الجهاز (البقاء مسجلاً)', en: 'Remember this device' },
+  'lbl-auth-submit':   { ar: 'تسجيل الدخول الآمن', en: 'Secure Login' },
+  'lbl-auth-footer':   { ar: '🔒 منصة داخلية مخصصة ومحمية لمستشاري 51Talk التعليميين', en: '🔒 Secure internal portal dedicated to 51Talk Academic Advisors' },
+  'auth-password-input': { ar: 'أدخل رمز المرور...', en: 'Enter passkey...', type: 'placeholder' }
+};
+
+const DEFAULT_VALUES = {
+  ar: {
+    name: 'ريان فهد القحطاني',
+    advisorName: 'أ. صابر حسين (Saber Hussien)',
+    advisorTitle: 'كبير المستشارين الأكاديميين — 51Talk KSA',
+    notes: 'يُنصح بالتركيز التام على إتمام جلسة التحضير المسبق (Preview) لمدة 5 دقائق قبل كل حصة لكسر حاجز الخوف، وتخصيص 15 دقيقة يومياً للقراءة الممتعة في مكتبة GRL لبناء مخزون لغوي عميق واستثنائي.'
+  },
+  en: {
+    name: 'Rayan Fahad Al-Qahtani',
+    advisorName: 'Saber Hussien (Academic Advisor)',
+    advisorTitle: 'Senior Academic Advisor — 51Talk KSA',
+    notes: 'Full focus on completing the 5-minute Smart Preview before each class is strongly advised to break hesitation, alongside 15 minutes of daily reading in the GRL Leveled Library for deep lexical growth.'
+  }
+};
+
+function handleDefaultValuesLanguageSwitch(isEn) {
+  const fromLang = isEn ? 'ar' : 'en';
+  const toLang = isEn ? 'en' : 'ar';
+
+  if (state.name === DEFAULT_VALUES[fromLang].name) {
+    state.name = DEFAULT_VALUES[toLang].name;
+    if ($('f-name')) $('f-name').value = state.name;
+  }
+  if (state.advisorName === DEFAULT_VALUES[fromLang].advisorName) {
+    state.advisorName = DEFAULT_VALUES[toLang].advisorName;
+    if ($('f-advisor-name')) $('f-advisor-name').value = state.advisorName;
+  }
+  if (state.advisorTitle === DEFAULT_VALUES[fromLang].advisorTitle) {
+    state.advisorTitle = DEFAULT_VALUES[toLang].advisorTitle;
+    if ($('f-advisor-title')) $('f-advisor-title').value = state.advisorTitle;
+  }
+  if (state.notes === DEFAULT_VALUES[fromLang].notes) {
+    state.notes = DEFAULT_VALUES[toLang].notes;
+    if ($('f-notes')) $('f-notes').value = state.notes;
+  }
+}
+
+function updateSidebarCurriculaCards(isEn) {
+  document.querySelectorAll('.curriculum-interactive-card').forEach(card => {
+    const id = card.dataset.id;
+    const item = CURRICULA_DATABASE[id];
+    if (!item) return;
+
+    const titleEl = card.querySelector('.curr-name');
+    const badgeEl = card.querySelector('.curr-tag-pill');
+    const descEl = card.querySelector('.curr-desc');
+
+    if (titleEl) titleEl.textContent = (isEn && item.title_en) ? item.title_en : item.title;
+    if (badgeEl) badgeEl.textContent = (isEn && item.badge_en) ? item.badge_en : item.badge;
+    if (descEl) descEl.textContent = (isEn && item.desc_en) ? item.desc_en : item.desc;
+  });
+}
+
+function updateSidebarEcosystemCards(isEn) {
+  const ecoMap = {
+    'card-eco-podcast': {
+      badge: isEn ? 'Pillar 1 • Pink' : 'الركيزة 1 • Pink',
+      title: 'English Podcast',
+      desc: isEn 
+        ? 'Improves listening comprehension, phonemic nuance, and natural pronunciation through engaging stories.'
+        : 'يحسن مهارة الاستماع والفهم والنطق عبر قصص ومواقف حقيقية ممتعة.'
+    },
+    'card-eco-ai': {
+      badge: isEn ? 'Pillar 2 • Blue' : 'الركيزة 2 • Blue',
+      title: 'AI Conversation Classes',
+      desc: isEn 
+        ? 'Develops speaking courage, spontaneous dialogue, and natural real-world interaction in daily situations.'
+        : 'تطوير مهارة التحدث والتواصل التلقائي في مواقف الحياة اليومية والسفر.'
+    },
+    'card-eco-iur': {
+      badge: isEn ? 'Pillar 3 • Amber' : 'الركيزة 3 • Amber',
+      title: 'IUR Recorded Classes',
+      desc: isEn 
+        ? 'Spaced repetition playback of recorded lessons anytime to reinforce memory and consolidate syntax.'
+        : 'مراجعة وتثبيت المحتوى ومشاهدة الدروس المسجلة في أي وقت لترسيخ الذاكرة.'
+    },
+    'card-eco-grl': {
+      badge: isEn ? 'Pillar 4 • Green' : 'الركيزة 4 • Green',
+      title: 'GRL Leveled Library',
+      desc: isEn 
+        ? 'Over 1,000 leveled interactive stories, videos, and literacy activities keeping reading active daily.'
+        : 'مكتبة رقمية كبرى تضم أكثر من 1,000 قصة وفيديو وأنشطة تفاعلية مشوقة.'
+    }
+  };
+
+  Object.keys(ecoMap).forEach(cardId => {
+    const card = $(cardId);
+    if (!card) return;
+    const badgeEl = card.querySelector('.addon-card-badge');
+    const titleEl = card.querySelector('.addon-title');
+    const descEl = card.querySelector('.addon-desc');
+    if (badgeEl) badgeEl.textContent = ecoMap[cardId].badge;
+    if (titleEl) titleEl.textContent = ecoMap[cardId].title;
+    if (descEl) descEl.textContent = ecoMap[cardId].desc;
+  });
+}
+
+function updateSidebarAddonCards(isEn) {
+  const badgeMap = {
+    'at-writing':  isEn ? 'Included Free' : 'مشمول مجاناً',
+    'at-grl':      isEn ? 'Included Free' : 'مشمول مجاناً',
+    'at-treasure': isEn ? 'Included Free' : 'مشمول مجاناً',
+    'at-ai':       isEn ? 'AI Exclusive' : 'حصري للذكاء الاصطناعي',
+    'at-report':   isEn ? 'AI Benchmark' : 'تقرير تحليلي دقيق',
+    'at-cert':     isEn ? 'Official CEFR' : 'اعتماد CEFR دولي'
+  };
+
+  document.querySelectorAll('.addon-smart-card:not(.eco-selector-card)').forEach(card => {
+    const addonId = card.id.replace('card-', '');
+    const item = ADDONS_DATABASE[addonId];
+    if (!item) return;
+
+    const badgeEl = card.querySelector('.addon-card-badge');
+    const titleEl = card.querySelector('.addon-title');
+    const descEl = card.querySelector('.addon-desc');
+
+    if (badgeEl && badgeMap[addonId]) badgeEl.textContent = badgeMap[addonId];
+    if (titleEl) titleEl.textContent = (isEn && item.title_en) ? item.title_en : item.title;
+    if (descEl) descEl.textContent = (isEn && item.desc_en) ? item.desc_en : item.desc;
+  });
+}
+
+function updatePresetsModalCards(isEn) {
+  const presetsMap = {
+    starter: {
+      title: isEn ? 'Early Foundation & Phonics' : 'التأسيس المبكر والصوتيات (Early Foundation & Phonics)',
+      meta:  isEn ? 'Level S ➔ Level 2 | Ages 4–7 | Focus on letters, pronunciation & picture readers' : 'Level S ➔ Level 2 | مناسب للأطفال 4–7 سنوات | التركيز على الحروف، النطق، والقصص المصورة',
+      tags:  isEn ? '<span>Phonics</span><span>Core Track</span><span>Word Treasure</span>' : '<span>الصوتيات</span><span>المنهج الأساسي</span><span>كنز الكلمات</span>'
+    },
+    academic: {
+      title: isEn ? 'Saudi School Excellence & Academic Distinction' : 'التميز المدرسي والتفوق الأكاديمي (Saudi School Excellence)',
+      meta:  isEn ? 'Level 1 ➔ Level 4 | Elementary & Middle School | Aligned with We Can + NCE + Writing' : 'Level 1 ➔ Level 4 | مناسب لطلاب الابتدائي والإعدادي | توافق مع We Can + NCE + كتاب الكتابة',
+      tags:  isEn ? '<span>We Can Series</span><span>NCE</span><span>Grammar</span>' : '<span>منهج We Can</span><span>NCE</span><span>القواعد</span>'
+    },
+    fluency: {
+      title: isEn ? 'Fast Fluency & Communicative Confidence' : 'الطلاقة السريعة وكسر حاجز الخجل (Fast Fluency & Speaking)',
+      meta:  isEn ? 'Level 2 ➔ Level 5 | Hesitant Speakers | Intensive 4 Lessons/Wk + Free Talk' : 'Level 2 ➔ Level 5 | مناسب للطلاب الخجولين | مكثف 4 حصص أسبوعياً + Free Talk',
+      tags:  isEn ? '<span>Free Talk</span><span>36 AI Lessons</span><span>GRL Library</span>' : '<span>Free Talk</span><span>36 حصة AI</span><span>مكتبة GRL</span>'
+    },
+    mastery: {
+      title: isEn ? 'Comprehensive Mastery & International IELTS Prep' : 'الإتقان الشامل والتأهل الدولي (Comprehensive Mastery & IELTS)',
+      meta:  isEn ? 'Level 3 ➔ Level 7+ | Teens & University Admissions | IELTS + NCE + Academic Writing' : 'Level 3 ➔ Level 7+ | للمراهقين والتحضير للجامعات والابتعاث | IELTS + NCE + كتابة أكاديمية',
+      tags:  isEn ? '<span>IELTS Speaking</span><span>Certified Degrees</span><span>5D AI Report</span>' : '<span>IELTS Speaking</span><span>شهادات معتمدة</span><span>تقرير AI خماسي</span>'
+    }
+  };
+
+  Object.keys(presetsMap).forEach(key => {
+    const tEl = $(`preset-t-${key}`);
+    const mEl = $(`preset-m-${key}`);
+    const tagsEl = $(`preset-tags-${key}`);
+    if (tEl) tEl.textContent = presetsMap[key].title;
+    if (mEl) mEl.textContent = presetsMap[key].meta;
+    if (tagsEl) tagsEl.innerHTML = presetsMap[key].tags;
+  });
+}
 
 function setLanguage(lang) {
   state.lang = lang;
   const isEn = lang === 'en';
 
-  // 1. Header toggle buttons
+  try {
+    localStorage.setItem('51talk_lang', lang);
+  } catch (e) {}
+
+  // 1. Header toggle buttons state
   const btnAr = $('btn-lang-ar');
   const btnEn = $('btn-lang-en');
   if (btnAr) btnAr.classList.toggle('active', !isEn);
   if (btnEn) btnEn.classList.toggle('active', isEn);
 
-  // 2. Document direction & font classes
+  // 2. Dynamic page-wide direction & font families
+  document.documentElement.lang = isEn ? 'en' : 'ar';
+  document.documentElement.dir = isEn ? 'ltr' : 'rtl';
+  document.body.classList.toggle('app-lang-en', isEn);
+  document.body.classList.toggle('app-lang-ar', !isEn);
+  document.title = isEn 
+    ? '51Talk Study Plan Studio | KSA CEFR Framework' 
+    : '51Talk KSA — استوديو الخطط الدراسية الفردية لتطوير اللغة الإنجليزية';
+
+  // 3. Document preview direction & font classes
   const doc = $('study-plan-doc');
   if (doc) {
     doc.setAttribute('dir', isEn ? 'ltr' : 'rtl');
@@ -912,16 +1232,46 @@ function setLanguage(lang) {
     doc.classList.toggle('doc-lang-ar', !isEn);
   }
 
-  // 3. Arrow direction from smaller to larger!
+  // 4. Arrow direction from smaller to larger!
   const journeyArrow = $('doc-journey-arrow');
   if (journeyArrow) {
     journeyArrow.textContent = isEn ? '▶' : '◀';
   }
 
-  // 4. Update texts throughout the document
+  // 5. Update static labels & inputs from I18N_UI
+  Object.keys(I18N_UI).forEach(id => {
+    const el = $(id);
+    if (!el) return;
+    const item = I18N_UI[id];
+    const text = isEn ? item.en : item.ar;
+    if (item.type === 'placeholder') {
+      el.placeholder = text;
+    } else if (item.type === 'title') {
+      el.title = text;
+    } else {
+      el.textContent = text;
+    }
+  });
+
+  // 6. Update interactive sidebar cards & modals
+  updateSidebarCurriculaCards(isEn);
+  updateSidebarEcosystemCards(isEn);
+  updateSidebarAddonCards(isEn);
+  updatePresetsModalCards(isEn);
+
+  // 7. Update default input values if user has not typed custom ones
+  handleDefaultValuesLanguageSwitch(isEn);
+
+  // 8. Update level selector pill tags in Sidebar Tab 1
+  const currObj = getLevelObj(state.currLvl);
+  const targetObj = getLevelObj(state.targetLvl);
+  if (currObj) $('curr-tag-display').textContent = `${currObj.label} (${currObj.name})`;
+  if (targetObj) $('target-tag-display').textContent = `${targetObj.label} (${targetObj.name})`;
+
+  // 9. Update document preview contents
   updateDocumentLanguageContent(isEn);
 
-  // 5. Re-render dynamic elements
+  // 10. Re-render dynamic elements (Ribbon, roadmap, curricula, addons, ecosystem, notes)
   renderStudio();
 }
 
@@ -1021,7 +1371,6 @@ function updateDocumentLanguageContent(isEn) {
   if ($('sec-sub-ecosystem')) $('sec-sub-ecosystem').textContent = isEn ? '4 integrated foundational pillars securing daily active practice and global horizons' : '4 ركائز متكاملة تضمن ممارسة يومية مستمرة وتفتح للطفل آفاقاً عالمية رحبة';
   if ($('sec-tag-ecosystem')) $('sec-tag-ecosystem').textContent = isEn ? 'English Opens a Bigger World!' : 'English يفتح لهم عالم أكبر!';
   if ($('lbl-eq-result')) $('lbl-eq-result').textContent = isEn ? '🎯 Confident Kids Speaking English in Real Life!' : '🎯 أطفال واثقين يستخدمون English في حياتهم!';
-  if ($('tab-nav-eco')) $('tab-nav-eco').textContent = isEn ? '360° Ecosystem' : 'منظومة التعلم 360°';
 
   // Section 9: Value-Adds Framed Header
   if ($('sec-title-addons')) $('sec-title-addons').textContent = isEn ? 'Exclusive Complimentary Academic Supplements' : 'المميزات الحصرية والمواد التكميلية المرفقة مع الطالب';
@@ -1032,20 +1381,6 @@ function updateDocumentLanguageContent(isEn) {
   if ($('sec-title-advisor')) $('sec-title-advisor').textContent = isEn ? 'Official Academic Directives & Advisor Endorsement' : 'توجيهات واعتماد المستشار التعليمي المشرف';
   if ($('sec-sub-advisor')) $('sec-sub-advisor').textContent = isEn ? 'Certified strategic guidance tailored for parents to maximize learning outcomes' : 'خطة إستراتيجية معتمدة وموجهة لولي الأمر لضمان تحقيق أعلى عائد تعليمي';
   if ($('sec-tag-advisor')) $('sec-tag-advisor').textContent = isEn ? 'Official Certification' : 'اعتماد أكاديمي رسمي';
-
-  // Security Gate & Lock Button
-  if ($('lbl-lock-btn')) $('lbl-lock-btn').textContent = isEn ? 'Lock Studio' : 'قفل المنصة';
-  const authTitle = document.querySelector('.auth-title');
-  if (authTitle) authTitle.textContent = isEn ? 'Smart Study Plan Studio' : 'استوديو الخطط الدراسية الذكية';
-  const authDesc = document.querySelector('.auth-desc');
-  if (authDesc) authDesc.textContent = isEn ? 'Please enter authorized passkey to access platform' : 'يرجى إدخال كلمة المرور المصرح بها للدخول إلى المنصة';
-  const authPassInput = $('auth-password-input');
-  if (authPassInput) authPassInput.placeholder = isEn ? 'Enter passkey...' : 'أدخل رمز المرور...';
-  const btnAuthSub = $('btn-auth-submit');
-  if (btnAuthSub) {
-    const textSpan = btnAuthSub.querySelector('span:first-child');
-    if (textSpan) textSpan.textContent = isEn ? 'Secure Login' : 'تسجيل الدخول الآمن';
-  }
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -1149,13 +1484,19 @@ function applyConsultancyPreset(presetKey) {
   const p = CONSULTANCY_PRESETS[presetKey];
   if (!p) return;
 
+  const isEn = state.lang === 'en';
+  const nameVal = (isEn && p.name_en) ? p.name_en : p.name;
+  const advNameVal = (isEn && p.advisorName_en) ? p.advisorName_en : p.advisorName;
+  const advTitleVal = (isEn && p.advisorTitle_en) ? p.advisorTitle_en : p.advisorTitle;
+  const notesVal = (isEn && p.notes_en) ? p.notes_en : p.notes;
+
   // 1. Text Inputs
-  $('f-name').value = p.name;
+  $('f-name').value = nameVal;
   $('f-age').value = p.age;
-  $('f-advisor-name').value = p.advisorName;
-  $('f-advisor-title').value = p.advisorTitle;
+  $('f-advisor-name').value = advNameVal;
+  $('f-advisor-title').value = advTitleVal;
   $('f-advisor-contact').value = p.advisorContact;
-  $('f-notes').value = p.notes;
+  $('f-notes').value = notesVal;
 
   // 2. School Segment
   document.querySelectorAll('#school-group .seg-btn').forEach(b => {
@@ -1200,16 +1541,16 @@ function applyConsultancyPreset(presetKey) {
 
   // Merge into state
   Object.assign(state, {
-    name:           p.name,
+    name:           nameVal,
     age:            p.age,
     school:         p.school,
     currLvl:        p.currLvl,
     targetLvl:      p.targetLvl,
     freq:           p.freq,
-    advisorName:    p.advisorName,
-    advisorTitle:   p.advisorTitle,
+    advisorName:    advNameVal,
+    advisorTitle:   advTitleVal,
     advisorContact: p.advisorContact,
-    notes:          p.notes
+    notes:          notesVal
   });
 
   // Close modal and render
@@ -1249,26 +1590,63 @@ function copyLinkValue(linkText) {
 }
 
 // ──────────────────────────────────────────────────────────────────────
-// 8. WHATSAPP SUMMARY GENERATOR
+// 8. WHATSAPP SUMMARY GENERATOR (BILINGUAL)
 // ──────────────────────────────────────────────────────────────────────
 
 function generateWhatsappExecutiveSummary() {
+  const isEn = state.lang === 'en';
   const stats = calculateRoadmapDetails(state.currLvl, state.targetLvl, state.freq);
   const currObj = getLevelObj(state.currLvl);
   const targetObj = getLevelObj(state.targetLvl);
   const currName = currObj ? (currObj.id === -1 ? 'Level S (Starter)' : `Level ${currObj.id} (${currObj.cefr})`) : '—';
   const targetName = targetObj ? (targetObj.id === -1 ? 'Level S (Starter)' : `Level ${targetObj.id} (${targetObj.cefr})`) : '—';
-  const timeDesc = stats ? `${stats.minMonths} – ${stats.maxMonths} شهراً (إجمالي ${stats.totalLessons} حصة — بمعدل 144 حصة و6 إلى 8 أشهر لكل مستوى)` : 'يُحدد لاحقاً';
 
-  const curriculaList = [...state.curricula].map(k => `  ▫️ ${CURRICULA_DATABASE[k]?.short || k}`).join('\n');
-  const addonsList = [...state.addons].map(k => `  ✅ ${ADDONS_DATABASE[k]?.title || k}`).join('\n');
+  let text = '';
+  if (isEn) {
+    const timeDesc = stats ? `${stats.minMonths} – ${stats.maxMonths} Months (Total ${stats.totalLessons} Lessons — average 144 lessons and 6 to 8 months per level)` : 'To be determined';
+    const curriculaList = [...state.curricula].map(k => `  ▫️ ${CURRICULA_DATABASE[k]?.short_en || CURRICULA_DATABASE[k]?.short || k}`).join('\n');
+    const addonsList = [...state.addons].map(k => `  ✅ ${ADDONS_DATABASE[k]?.title_en || ADDONS_DATABASE[k]?.title || k}`).join('\n');
 
-  const text = `
+    text = `
+🎓 *Individual Educational Development Plan | 51Talk Saudi Arabia 🇸🇦*
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 *Student Name:* ${state.name}
+🎂 *Age:* ${state.age} Years
+🏫 *School:* ${formatSchoolType(state.school, 'en')}
+
+🎯 *Academic Progression Path (CEFR Certified Framework):*
+  🔸 Current Level: *${currName}*
+  🚀 Target Milestone: *${targetName}*
+  ⏱️ Estimated Duration: *${timeDesc}*
+  📅 Recommended Frequency: *${state.freq} Lessons / Week*
+
+📚 *Approved Curricula in Plan:*
+${curriculaList}
+
+✨ *Exclusive Academic Supplements (Included Free):*
+${addonsList}
+
+💡 *Directives of Supervising Academic Advisor:*
+  «${state.notes}»
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👨‍💼 *Certified Academic Advisor:* ${state.advisorName}
+💼 ${state.advisorTitle}
+📱 ${state.advisorContact}
+🌐 Official Website: www.51talk.com | KSA
+✨ *At 51Talk, we build an extraordinary linguistic future for every child.*
+`.trim();
+  } else {
+    const timeDesc = stats ? `${stats.minMonths} – ${stats.maxMonths} شهراً (إجمالي ${stats.totalLessons} حصة — بمعدل 144 حصة و6 إلى 8 أشهر لكل مستوى)` : 'يُحدد لاحقاً';
+    const curriculaList = [...state.curricula].map(k => `  ▫️ ${CURRICULA_DATABASE[k]?.short || k}`).join('\n');
+    const addonsList = [...state.addons].map(k => `  ✅ ${ADDONS_DATABASE[k]?.title || k}`).join('\n');
+
+    text = `
 🎓 *الخطة الدراسية الفردية لتطوير اللغة الإنجليزية | 51Talk السعودية 🇸🇦*
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 👤 *اسم الطالب:* ${state.name}
 🎂 *العمر:* ${state.age} سنوات
-🏫 *المدرسة:* ${state.school}
+🏫 *المدرسة:* ${formatSchoolType(state.school, 'ar')}
 
 🎯 *مسار الارتقاء الأكاديمي (معايير CEFR الدولية):*
   🔸 المستوى الحالي: *${currName}*
@@ -1292,24 +1670,29 @@ ${addonsList}
 🌐 الموقع الرسمي: www.51talk.com | KSA
 ✨ *في 51Talk نبني مستقبلاً لغوياً استثنائياً لكل طفل سعودي.*
 `.trim();
+  }
+
+  const alertMsg = isEn 
+    ? '✅ Study plan executive summary copied! You can now paste it directly into WhatsApp.' 
+    : '✅ تم نسخ ملخص الخطة الدراسية بنجاح! يمكنك الآن لصقه مباشرة في محادثة الواتساب.';
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => {
-      alert('✅ تم نسخ ملخص الخطة الدراسية بنجاح! يمكنك الآن لصقه مباشرة في محادثة الواتساب.');
-    }).catch(() => fallbackCopy(text));
+      alert(alertMsg);
+    }).catch(() => fallbackCopy(text, alertMsg));
   } else {
-    fallbackCopy(text);
+    fallbackCopy(text, alertMsg);
   }
 }
 
-function fallbackCopy(text) {
+function fallbackCopy(text, alertMsg) {
   const ta = document.createElement('textarea');
   ta.value = text;
   document.body.appendChild(ta);
   ta.select();
   document.execCommand('copy');
   document.body.removeChild(ta);
-  alert('✅ تم نسخ ملخص الخطة الدراسية بنجاح!');
+  alert(alertMsg || '✅ Copied successfully!');
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -1320,14 +1703,20 @@ async function exportPDF() {
   const originalDoc = $('study-plan-doc');
   if (!originalDoc) return;
 
+  const isEn = state.lang === 'en';
   const sanitizedName = (state.name || 'study_plan').trim().replace(/[\s\/\\:*?"<>|]+/g, '_');
-  const pdfFilename = `خطة_دراسية_51Talk_${sanitizedName}.pdf`;
+  const pdfFilename = isEn ? `51Talk_Study_Plan_${sanitizedName}.pdf` : `خطة_دراسية_51Talk_${sanitizedName}.pdf`;
 
   const btnHeader = $('btn-pdf');
   const btnToolbar = $('btn-quick-pdf');
 
-  if (btnHeader) btnHeader.innerHTML = '⏳ جارٍ تجهيز وتحميل ملف الـ PDF...';
-  if (btnToolbar) btnToolbar.innerHTML = '⏳ جارٍ التجهيز...';
+  if (btnHeader) btnHeader.innerHTML = isEn ? '⏳ Generating & Downloading PDF...' : '⏳ جارٍ تجهيز وتحميل ملف الـ PDF...';
+  if (btnToolbar) btnToolbar.innerHTML = isEn ? '⏳ Preparing...' : '⏳ جارٍ التجهيز...';
+
+  const resetButtons = () => {
+    if (btnHeader) btnHeader.innerHTML = `<span class="btn-icon">📥</span><span>${isEn ? 'Download PDF (Pixel-Perfect)' : 'تحميل وثيقة PDF (متطابقة تماماً)'}</span>`;
+    if (btnToolbar) btnToolbar.innerHTML = `<span class="tool-icon">📥</span><span>${isEn ? 'Download Proportional PDF' : 'تحميل PDF متساوي الأبعاد'}</span>`;
+  };
 
   try {
     // 1. Temporarily ensure smooth positioning for capture
@@ -1337,8 +1726,7 @@ async function exportPDF() {
     if (typeof html2canvas === 'undefined' || !(window.jspdf || window.jsPDF)) {
       console.warn('html2canvas or jsPDF not loaded, triggering print dialog fallback');
       window.print();
-      if (btnHeader) btnHeader.innerHTML = '<span class="btn-icon">📥</span><span>تحميل وثيقة PDF (متطابقة تماماً)</span>';
-      if (btnToolbar) btnToolbar.innerHTML = '<span class="tool-icon">📥</span><span>تحميل PDF متساوي الأبعاد</span>';
+      resetButtons();
       return;
     }
 
@@ -1394,14 +1782,11 @@ async function exportPDF() {
 
     // 7. Save file directly
     pdf.save(pdfFilename);
-
-    if (btnHeader) btnHeader.innerHTML = '<span class="btn-icon">📥</span><span>تحميل وثيقة PDF (متطابقة تماماً)</span>';
-    if (btnToolbar) btnToolbar.innerHTML = '<span class="tool-icon">📥</span><span>تحميل PDF متساوي الأبعاد</span>';
+    resetButtons();
 
   } catch (err) {
     console.error('PDF Export Error:', err);
-    if (btnHeader) btnHeader.innerHTML = '<span class="btn-icon">📥</span><span>تحميل وثيقة PDF (متطابقة تماماً)</span>';
-    if (btnToolbar) btnToolbar.innerHTML = '<span class="tool-icon">📥</span><span>تحميل PDF متساوي الأبعاد</span>';
+    resetButtons();
     // Reliable browser print dialog fallback
     window.print();
   }
@@ -1449,7 +1834,12 @@ document.addEventListener('DOMContentLoaded', () => {
   state.advisorContact = $('f-advisor-contact').value;
   state.notes          = $('f-notes').value;
 
-  renderStudio();
+  const savedLang = localStorage.getItem('51talk_lang');
+  if (savedLang && (savedLang === 'en' || savedLang === 'ar')) {
+    setLanguage(savedLang);
+  } else {
+    renderStudio();
+  }
 
   // Enforce security passkey gate check on page load
   checkAuthenticationState();
